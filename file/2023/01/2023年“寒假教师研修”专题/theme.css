@@ -1,0 +1,11 @@
+/* 顶部条 */
+#theme .theme-bar {
+  background: linear-gradient(90deg, #b6130e 0%, #d00b0b 100%);
+  color: #fff;
+}
+
+/* 底部 */
+#theme .theme-footer {
+  background: linear-gradient(180deg, #cd0e0e 0%, #960d09 100%);
+  color: '#fff';
+}

@@ -62,11 +62,11 @@ function addpl(id,f){
 	 var pldata = $("#formpl").serialize();
 	 //console.log(pldata);
 	 StopButton('add',9);
-	 $.post("/app/class/ajax.php?act=addpl&id="+id, pldata , function(data) {	 
+	 $.post("./app/class/ajax.php?act=addpl&id="+id, pldata , function(data) {	 
      if(data.result == '200')
 	 {	
 		 pldata += "&r="+encodeURIComponent(window.location.href);
-		 $.post("/app/class/ajax.php?act=pltz&d=addpl&id="+id,pldata);
+		 $.post("./app/class/ajax.php?act=pltz&d=addpl&id="+id,pldata);
 		 $(".comment_list").append(data.message);$("#pcontent").val('');$("#pcode").val('');reloadcode();
 		 errmsg('');	 	 
 	 }else{
@@ -91,7 +91,7 @@ function plsave(id,pid,x,pmail){
 		$("#rlog").focus();
 		return false;
 	}
-	$.post("/app/class/ajax.php?act=plsave&id=" + pid + "&cid=" + id, {
+	$.post("./app/class/ajax.php?act=plsave&id=" + pid + "&cid=" + id, {
 		rcontent: rlog
 	}, function(data) {
         capl();
@@ -101,7 +101,7 @@ function plsave(id,pid,x,pmail){
 			}else{
 				$('#Ctext-'+pid).append('<p class="re">&nbsp;&nbsp;<strong style="color:#C00">回复</strong>：<span>'+rlog+'</span></p>');
 			}
-			$.post("/app/class/ajax.php?act=pltz&d=plsave&id="+pid,{rcontent:rlog,pmail:pmail,r:window.location.href});			 
+			$.post("./app/class/ajax.php?act=pltz&d=plsave&id="+pid,{rcontent:rlog,pmail:pmail,r:window.location.href});			 
 		} else {
 			myalert(data.message);
 		}
@@ -110,7 +110,7 @@ function plsave(id,pid,x,pmail){
 function ckpass(id){	
 	var ps= $("#password").val();
 	if (ps!=''){
-	$.post("/app/class/ajax.php?act=ckpass&id="+id, {ps:ps}, function(data) {if(data.result=='200'){ $("#article .text").html(data.message)}else{myalert(data.message);}},'json');}else{
+	$.post("./app/class/ajax.php?act=ckpass&id="+id, {ps:ps}, function(data) {if(data.result=='200'){ $("#article .text").html(data.message)}else{myalert(data.message);}},'json');}else{
 	$("#password").focus();
 	}	
 }
@@ -119,7 +119,7 @@ function DotRoll(elm) {
     $("body,html").animate({ scrollTop: $(elm).offset().top }, 500);
 }
 
-function reloadcode(){$('#codeimg').attr('src','/app/class/codes.php?t='+Math.random());}
+function reloadcode(){$('#codeimg').attr('src','./app/class/codes.php?t='+Math.random());}
 
 $(document).ready(function () {
 

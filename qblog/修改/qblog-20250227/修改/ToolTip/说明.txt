@@ -1,0 +1,7 @@
+Tooltip V1.01
+
+css请放到 styles目录里面,再在要使用样式的页面的最后加入这样一段代码：
+<script type="text/javascript" src="scripts/ToolTip.js"></script>
+<script type="text/javascript">initToolTip();</script>
+
+我的博客：http://www.cnblogs.com/huacn

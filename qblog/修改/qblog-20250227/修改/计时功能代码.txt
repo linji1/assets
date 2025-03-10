@@ -1,0 +1,85 @@
+<!-- 标题变化 -->
+<script> 
+var OriginTitile = document.title;
+var titleTime;
+document.addEventListener('visibilitychange', function () {
+   if (document.hidden) {
+       $('[rel="icon"]').attr('href', "/icon_32.png");
+       document.title = '喂。。去哪儿了 ~ | 快回来！';
+       clearTimeout(titleTime);
+   }
+   else {
+   $('[rel="icon"]').attr('href', "/icon_32.png");
+       document.title = '欢迎回来 - 嘻嘻^o^' + OriginTitile;
+       titleTime = setTimeout(function () {
+       document.title = OriginTitile;
+       }, 2000);
+   }
+});
+</script>
+<!-- 标题变化End -->
+
+<!--计时功能代码-->
+            <script language="javascript">
+            function tick() {
+                var years,days,hours, minutes, seconds;
+                var openday = new Date('1977/10/26 00:00');    //这里填写建站时间 2005/01/03
+                var today = new Date(); //获取系统当前时间
+                var total = (today.getTime()-openday.getTime())/1000;
+                years=Math.floor(total/31536000);
+                total=total-years*31536000;
+                days=Math.floor(total/86400);
+                total=total-days*86400;
+                hours=Math.floor(total/3600);
+                total=total-hours*3600;
+                minutes=Math.floor(total/60);
+                total=total-minutes*60;
+                seconds=Math.floor(total);
+                timeString = ""+years+" 年 "+days+" 天 "+hours+" 时 "+minutes+" 分 "+seconds+" 秒";
+                document.getElementById("Clock").innerHTML = timeString;
+                window.setTimeout("tick();", 1000);
+            }
+            window.onload = tick;
+            </script>
+<!--计时功能代码-->
+
+<!-- 链接TOPTIP样式 -->
+<script type="text/javascript" charset="utf-8">   
+var oldTitle = '';
+$(document).bind('mouseover mouseout mousemove',function(event){           
+    var left = event.pageX , top = event.pageY;
+    var ele = event.target;
+    var title = ele.title;
+
+    var type = event.originalEvent.type;
+    if(type == 'mouseover'){
+        oldTitle = title;
+        ele.title = '';
+        if(title && title.length > 0){                
+        //if(title != null){              
+            var showEle = $('<div></div>',{text:title,class:'showTitleBox'}).css({
+                position:'absolute',
+                top:top+10,
+                left:left,
+                border:'1px solid #ccc',
+                borderRadius:'5px',
+                background:"infobackground",
+                fontFamily:"Microsoft YaHei",
+		fontSize: '16px',
+                padding: '3px 8px'
+            })
+            showEle.appendTo('body');               
+        }
+    }else if(type == 'mouseout'){
+        ele.title = oldTitle;
+        $('.showTitleBox').remove();
+    }else if(type == 'mousemove'){
+        $('.showTitleBox').css({
+            top:top+10,
+            left:left
+        })
+    }
+})
+
+</script>
+<!-- 链接TOPTIP样式 -->

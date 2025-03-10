@@ -1,0 +1,13 @@
+body {
+	font-family:Verdana,宋体, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	background:#E5E5E5;
+	text-align:center;
+	
+}
+
+.tipbox { width:600px; margin:40px auto; text-align:left; background:#FFF; padding:1px;border:1px solid #CCC;}
+.tipbox h2{ color:#666; font-size:16px; font-family:Verdana; font-weight:bolder; margin:4px; padding:6px; font-style:italic; background:#B9E55C; }
+.tipbox p{ text-indent:24px; line-height:140%; padding:2px 10px; margin:0;}
+.tipbox p.code {color:#666;; text-indent:0px; border:1px dashed #BFF44D; margin:10px; padding:4px; background:#E2FAAD;}
+

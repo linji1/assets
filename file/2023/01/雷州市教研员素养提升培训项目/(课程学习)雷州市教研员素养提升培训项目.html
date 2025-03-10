@@ -1,0 +1,2254 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	
+<link href="common_new.css" rel="stylesheet" type="text/css">
+<link href="gzs.css" rel="stylesheet" type="text/css">
+
+<link href="gzs_list.css" rel="stylesheet" type="text/css">
+<link href="shared.css" rel="stylesheet" type="text/css">
+<link href="student.css" rel="stylesheet" type="text/css">
+<link href="wzgj-cyjl.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="http://static.study.teacheredu.cn/el/pc/default/v1.0/student/js/jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript" src="http://static.study.teacheredu.cn/el/pc/default/v1.0/gongzuoshi_new/js/tytabs.jquery.min.js"></script>
+<script type="text/javascript" src="http://static.study.teacheredu.cn/el/pc/default/v1.0/c/js/common.js"></script>
+<script type="text/javascript" src="http://static.study.teacheredu.cn/el/pc/default/v1.0/c/js/pager.js"></script>
+<script type="text/javascript" src="http://static.study.teacheredu.cn/el/pc/default/v1.0/student/js/js.js"></script>
+<script type="text/javascript" src="http://static.study.teacheredu.cn/el/pc/default/v1.0/ziyuan_two/js/resPriceConfig.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://static.study.teacheredu.cn/el/pc/default/v1.0/c/pop/js/pop.js"></script>
+<link rel="stylesheet" type="text/css" href="pop.css">
+
+	
+
+<title>学员工作室 - 雷州市教研员素养提升培训项目</title>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+	    	    	    	    	    	<script>
+	var dslx=dslx||{};
+	dslx.g={
+			homeurl:"http://cas.study.teacheredu.cn/proj",
+			ucurl:"http://study.teacheredu.cn/uc",
+			roleid:"$g_roleid",
+			authid:"12828355",
+			pid:"24829",
+			puid:"1531109"
+	};
+	dslx.g.nav={
+		isie6:function(){return jQuery.browser.msie && jQuery.browser.version=="6.0"}
+	}
+	dslx.g.toolcode={
+		cms:"320",
+		courseplan:"340",
+		homework:"350",
+		preparation:"351",
+		examo:"352",
+		article:"370",
+		teachingplan:"371",
+		comment:"380",
+		swap:"400"
+	};
+	dslx.p=dslx.p||{};
+	dslx.p.img={
+		defuerimg:"http://files.study.teacheredu.cn//el/uc/face/war.jpg",
+		getUserimg:function(url,type){
+			if(!url){url=this.defuerimg;}
+			if(type=="200"){return url;};
+			return url+"_"+type+"x"+type+".jpg";
+		},
+		error:function(type,el){
+    		    el.onerror="";
+				///if(!type){
+        		///	var url=el.class.split("userimg_")[1];
+        		///	if(!url){return;}
+        		///	type=url.split("x")[0];
+				///	}
+    			el.src=dslx.p.img.getUserimg(null,type);
+    	}
+	}
+	
+</script>
+<script>
+	function zpycsms(){
+		//提示
+	    var params = {
+	    	submitType:1,
+	    	cancelType:2,
+         	type:1,
+         	title:'原创承诺书说明',
+         	text:'<div style="font-size:14px;color:#717e8d;margin:8px;text-indent:2em;line-height:24px;"> 本人通过本网站提交的作品（含文字及其他形式）具有自主知识产权，并遵守<span style="color:#ff6600">《全国人大常委会关于维护互联网安全的决定》</span>及中华人民共和国其他各项有关法律法规的规定。如该作品在本网站刊载后引起著作权纠纷或其它法律纠纷，将由本人承担相应的民事或刑事法律责任。同时，本单位享有对相关资源进行宣传、使用和推介的权利。 </div>'
+	    }
+		obj.Alert(params,function () {
+	        
+		},function () {
+	         
+		})
+		//$("#modal_wrap .alert").css("width","680px");
+	}
+</script>
+<style>
+	.userimg_30{
+		width:30px;
+		height:30px;
+	}
+	.userimg_50{
+		width:50px;
+		height:50px;
+	}
+	.userimg_200{
+		width:200px;
+		height:200px;
+	}
+</style>
+
+<!--头部开始-->
+<style>
+    .banner .bgBanner1 {
+        width: 1100px;
+        margin: 0 auto;
+        color: #000;
+        line-height: 80px;
+        font-size: 24px;
+        font-family: "微软雅黑";
+        font-weight: bold;
+        position: relative;
+    }
+	.banner .bgBanner1 .bgBanner1_title{
+		width: 850px;
+        float: left;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .banner .bgBanner1 .bgKuangWrap{
+        width: 244px;
+        height: 106px;
+        position: absolute;
+        top: 5px;
+        right: 0;
+        z-index: 999;
+        background: url(http://static.study.teacheredu.cn/el/pc/default/v1.0/gongzuoshi_new/images/bgKuang.png);
+    }
+    .banner .bgBanner1 .bgKuangWrap .p1{
+        font-size: 12px;
+        line-height: 25px;
+        z-index: 999;
+        font-weight: normal;
+        padding-left: 20px;
+    }
+    .banner .bgBanner1 .bgKuangWrap .p1 .span1{
+        font-weight: bold;
+    }
+    .banner .bgBanner1 .bgKuangWrap .p1 .span2{
+        font-weight: bold;
+        color: #FC463E;
+    }
+</style>
+
+<script type="text/javascript" src="http://static.study.teacheredu.cn/el/pc/default/v1.0/c/js/cascade.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+     $("#guanbi").click(function(){
+      	$(".tips").hide();
+     });
+	$('.modify_password_close').on('click',function(){
+		$(this).closest('.modify_password').hide();  
+	})
+});
+ function aplipay(price){
+    	var url="http://cas.study.teacheredu.cn/proj/alipay/mandatory_alipay_info.htm?status=1";
+    	window.location.href=url;
+    }
+function goPay(){
+	var url="http://cas.study.teacheredu.cn/proj/alipay/alipayIndex";
+	window.location.href=url;
+}
+$.ajaxSetup ({
+	cache:false,
+});
+var userid="1531109";
+	//加载类型
+	function rendType(){
+		jQuery("#cls_con,#type_con").empty();
+		if(!userid){alert("操作有误");return;}
+		beforePamars = "";
+		jQuery.ajax({
+			type : "POST",
+			url : "http://cas.study.teacheredu.cn/proj/pcadmin/user/userAjax/getUserDetialinfo.json",
+			data : {
+				id:userid
+			},
+			success : function(json) {
+				var con = jQuery("#type_con").empty();
+				var dtl = json["listdts"];
+				var user = json["user"];
+				var sysDicts = user["sysDicts"];
+				var usrDicts = user["usrDicts"];
+				var userDictList = [user];//user["userDictList"];
+				//拼出需要展示的内容，层级，学科，年级等
+				for (var i in dtl) {
+					var dt = dtl[i];
+					var ud = userDictList[i];
+					if (dt) {
+						var flag = dt.code.indexOf("USR");
+						var fname = "usrid";
+						if (flag == -1) {//如果不是自定义
+							fname = "sysid";
+						}
+						var str = '<div class="dict_sel_div_2" style="height: 30px;">' +
+								'<span>' + dt.name + '</span>' +
+								'<input ' + '  name="' + fname + '" type="hidden" class="hidden_select" value="-1">' +
+								'<select id="dicttype_' + dt.id + '" class="dicttype_select" >' +
+								'</select>' +
+								'</div>'
+						con.append(str);
+					}
+				}
+				jQuery.each(usrDicts, function () {
+					if (this.dicttypeId) {
+						jQuery("#dicttype_" + this.dicttypeId).attr("def", this.id);
+						jQuery("#dicttype_" + this.dicttypeId).prevAll("input .hidden_select").val(this.id);
+					}
+				});
+				jQuery.each(sysDicts, function () {
+					if (this.dicttypeId) {
+						jQuery("#dicttype_" + this.dicttypeId).attr("def", this.id);
+						jQuery("#dicttype_" + this.dicttypeId).prevAll("input .hidden_select").val(this.id);
+					}
+				});
+				var cons = jQuery(".dict_sel_div_2");
+				cons.each(function () {
+					var proxy = jQuery(this);
+					var def = proxy.find(".dicttype_select").attr("def");
+					var c_back = c_back_change;
+					dslx.cascade.inittype(proxy, "dicttype_select", "hidden_select", null, def, c_back);
+				});
+			}
+		});
+	}
+	function rendTypeCtrl(){
+		//校本添加禁用条件
+		var arr = $(".dict_sel_div_2"); //层级，学科，年级,班级
+		if("" == "0"){
+			arr.eq(0).children('select').attr("disabled",true);
+		}
+		if("" == "0"){
+			arr.eq(1).children('select').attr("disabled",true);
+		}
+		if("" == "0"){
+			arr.eq(2).children('select').attr("disabled",true);
+		}
+		if("" == "0"){
+			$("#cls_con").children('input').attr("disabled",true);
+		}
+	}
+
+	
+	/*回调函数*/
+	function c_back_change(){
+		//触发change事件
+		jQuery("#changeclass .dicttype_select").last().trigger("change");
+	}
+	
+	 jQuery(function(){
+	 	jQuery("#changeclass .dicttype_select").live("change",function(){
+	 		//初始化下拉框内的内容
+	 		var el=$(this);
+	 		var hidval=el.prevAll("input.hidden_select");
+	 		hidval.val(el.val());
+	 		queryClassWithUserDict();
+	 	});
+	 	showNotiTip();
+	 });
+		var beforePamars = "";
+	 function queryClassWithUserDict(){
+	 	var sy=jQuery("input.hidden_select[name=sysid]").map(function(){return this.value;}).get();
+	 	var us=jQuery("input.hidden_select[name=usrid]").map(function(){return this.value;}).get();
+	 	var sysid=sy.length>0?"&sysid="+(sy.join("&sysid=")):"";
+	 	var usrid=us.length>0?"&usrid="+(us.join("&usrid=")):"";
+	 	for(var i in sy){
+	 		if(sy[i]==-1){
+	 			return;
+	 		}
+	 	}
+	 	for(var i in us){
+	 		if(us[i]==-1){
+	 			return;
+	 		}
+	 	}
+	 	debugger;
+	 	if(sysid + usrid == beforePamars){
+	 		return ;
+		}
+		 beforePamars = sysid+usrid;
+	 	var url="http://cas.study.teacheredu.cn/proj/pcadmin/org/classAjax/queryClassWithUserDictAndUp.json";
+	 	jQuery.ajax({
+            type: "POST",
+            url: url,
+	 	   dataType:"json",
+            data: "id="+userid+beforePamars+"&isXb=",
+            success: function(msg){
+              	var con=jQuery("#cls_con").empty().append("<li style='height: 30px;'><h1>班级选择</h1></li>");
+	 			for(var o in msg){
+	 				var c=msg[o];
+	 				var str="<li style='height: 30px;'><input type='radio' name='clsid' value='"+c.id+"'>"+c.classTitle+"("+c.classCount+"/"+c.classCountPre+")</li>";
+	 				con.append(str);
+	 			}
+	 			if(!msg||msg.length==0){
+	 				con.append("<p>当前选择项未查到匹配的班级，请重新选择条件</p>");
+	 			}
+            }
+         });
+	 }
+
+	function saveUserClassinfo(){
+		var sy=jQuery("input.hidden_select[name=sysid]").map(function(){return this.value;}).get();
+		var us=jQuery("input.hidden_select[name=usrid]").map(function(){return this.value;}).get();
+		var sysid=sy.length>0?"&sysid="+(sy.join("&sysid=")):"";
+		var usrid=us.length>0?"&usrid="+(us.join("&usrid=")):"";
+		for(var i in sy){
+			if(sy[i]==-1){
+				alert("请选择字典");
+				return;
+			}
+		}
+		for(var i in us){
+			if(us[i]== -1){
+			    alert("请选择字典");
+				return;
+			}
+		}
+		if(!isAllChoose()){
+		   alert("请选择字典");
+		   return;
+		}	
+		var flag=1;
+		var clsid=jQuery(":checked[name=clsid]").val();
+		if((!clsid)){
+			alert("请选择班级");
+			return;
+		}
+		var url="http://cas.study.teacheredu.cn/proj/pcadmin/user/userAjax/saveUserClassinfo.json";
+		jQuery.ajax({
+           type: "POST",
+           url: url,
+		   dataType:"json",
+           data: "uid="+userid+"&clsid="+clsid+"&flag="+flag+sysid+usrid,
+           success: function(msg){
+		   		if(msg=="true"){
+					if(confirm("操作成功，是否刷新本页")){
+							window.location.reload();
+    				}else{
+    					 alert("操作失败");
+    				}
+				}else{
+					alert(msg);
+				}
+           }
+        });
+	}
+	
+	function isAllChoose(){
+		var success = true;
+		$(".dicttype_select").each(function (index) {
+			var value = $(this).val();
+  			if (value == -1) {
+       			success = false;
+       			return false;
+   			}
+		});
+ 		return success ;
+	}
+
+	  
+	function showNotiTip(){
+		var string = "";
+				if(string!=null && string!=''){
+			dslx.links.common.popNotice(string);
+		}
+	}
+	function study(pId){
+		var tempwindow=window.open('');
+		jQuery.ajax({
+			type: "GET",
+			url: "http://cas.study.teacheredu.cn/proj/pcadmin/project/projectAjax/canStudy.json",
+			data: {
+				projectId:pId,
+				teacherId:'12828355'
+			},
+			success: function(data){
+	   			if(data.success){
+	   				tempwindow.location= "http://cas.study.teacheredu.cn/proj/setProject?pid="+pId+"&sysRoletypeId=7357";
+	   			}else{
+					tempwindow.close();
+	   				dslx.pop.alert("请通知项目管理员完善您的培训平台用户信息！");
+	   			}
+			}
+		});
+	}
+</script>
+<div class="top">
+	<div class="menu" style="position: relative;">
+			<ul>
+												<li>
+						<a href=" http://cas.study.teacheredu.cn/proj/proj/index?projectId=24829 " target="_blank">项目主页</a>
+					</li>
+													<li>
+						<a href="http://cas.study.teacheredu.cn/proj/studentwork/index_new.htm">工作室</a>
+						<ul>
+																																													<li><a href="JavaScript:study(24829);"> 雷州市教研员素养提升培训项目</a></li>
+																																								</ul>
+					</li>
+    			    			    			    				 <!-- 本项目不需要资源库 -->
+    					<li><a target="_blank" href="http://cas.study.teacheredu.cn/proj/resourcelib/index?isAll=1" class="nosub">资源库</a></li>
+    												    				<li>
+						<a target="_blank" href="http://study.teacheredu.cn/uc/index.htm" class="nosub">个人中心</a>
+					</li>
+				    								</ul>
+		<div class="state fr">
+             <span>您好，
+				                    <a href=" http://study.teacheredu.cn/uc/index.htm " title=" 24829xy11 ">
+                                                                               24829xy11
+                                             </a>
+								<a href="  http://cas.study.teacheredu.cn/proj/quit.htm?pid=24829 " title="退出" class="off">退出</a>
+			</span>
+        </div>		
+	</div>
+</div>
+<div class="gonggao fr">
+  <div class="gonggao_arc">
+      <ul>		
+		           <li title="【手机端】操作手册">
+			<a target="_blank" href="http://cas.study.teacheredu.cn/proj/studentwork/article/article_view.htm?id=1066921&amp;ptcode=37001">
+				【手机端】操作手册
+			</a>	
+			</li>           
+		           <li title="【训前必看】学习指引">
+			<a target="_blank" href="http://cas.study.teacheredu.cn/proj/studentwork/article/article_view.htm?id=1066913&amp;ptcode=37001">
+				【训前必看】学习指引
+			</a>	
+			</li>           
+		           <li title="【电脑端】操作手册">
+			<a target="_blank" href="http://cas.study.teacheredu.cn/proj/studentwork/article/article_view.htm?id=1066907&amp;ptcode=37001">
+				【电脑端】操作手册
+			</a>	
+			</li>           
+		      </ul>
+      <span>
+				<a href="http://cas.study.teacheredu.cn/proj/studentwork/article/articleListNew?ptcode=37001">更多&gt;&gt;</a>
+	  </span>
+  </div>
+</div>
+<div class="banner">
+    <div class="bgBanner1">
+				<p title="雷州市教研员素养提升培训项目" class="bgBanner1_title"> 雷州市教研员素养提升培训项目  </p>
+		    </div>
+		
+	<div class="navbg"></div>
+	<div class="nav_menu">
+		<style>
+	.titleTesting{
+		width: 50px;
+		height: 20px;
+		border: 1px solid #86B602;
+		background-color: #95CE27;
+		display: block;
+		line-height: 18px;
+		text-align: center;
+		color: #FFF;
+		margin: 0 auto;
+	}
+	.addIframe1{
+		width:100%;
+		height:100%;
+		position:fixed;
+		left:0;
+		top:0;
+		background:rgba(0,0,0,0.1);
+		z-index:999999;
+	}
+	.addIframe1	iframe{
+		position:fixed;
+		left:50%;
+		top:50%;
+		transform:translate(-50%,-50%);
+	}
+	 /* 四川推课测评弹窗 */
+      .wnlTC {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 99999;
+    }
+
+    .wnlTC .cont {
+        width: 454px;
+        height: 360px;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        margin-left: -227px;
+        margin-top: -180px;
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .wnlTC .cont .top {
+        width: 100%;
+        height: 102px;
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 102px;
+        background-image: linear-gradient(-63deg, #3CC7EB 0%, #429AED 22%, #5A72F1 55%, #3F3EE3 100%);
+        float: none;
+    }
+
+    .wnlTC .cont .bottom {
+        width: 100%;
+        height: 258px;
+    }
+
+    .wnlTC .cont .bottom .title {
+        font-size: 16px;
+        color: #5E6877;
+        text-align: center;
+        margin-top: 30px;
+        line-height: normal;
+        font-weight: normal;
+		margin:50px auto;
+		width:80%;
+    }
+
+    .wnlTC .cont .bottom .data {
+        width: 360px;
+        height: 90px;
+        background: #F5F5F5;
+        border-radius: 4px;
+        margin: 10px auto 0;
+    }
+
+    .wnlTC .cont .bottom .data .p1 {
+        width: 100%;
+        font-size: 18px;
+        color: #FF9600;
+        text-align: center;
+        padding-top: 15px;
+        line-height: normal;
+        font-weight: normal;
+    }
+
+    .wnlTC .cont .bottom .data .listWrap {
+        width: 310px;
+        height: auto;
+        margin: 8px auto;
+        overflow: hidden;
+    }
+
+    .wnlTC .cont .bottom .data .listWrap .list1 {
+        color: #FF9600;
+        font-size: 14px;
+        cursor: pointer;
+        float: left;
+        line-height: 26px;
+        font-weight: normal;
+    }
+
+    .wnlTC .cont .bottom .data .listWrap span {
+        color: #FF9600;
+        font-size: 14px;
+        margin-left: 8px;
+        margin-right: 8px;
+        margin-top: 3px;
+        float: left;
+    }
+
+    .wnlTC .cont .bottom .goTest {
+        width: 150px;
+        height: 49px;
+        background: #515DE9;
+        border-radius: 6px;
+        font-size: 18px;
+        color: #FFFFFF;
+        text-align: center;
+        line-height: 49px;
+        margin: 30px auto 0;
+        cursor: pointer;
+    }
+
+    .wnlTC .cont .chazi {
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+</style>
+<script>
+$(document).ready(function(){
+	var ac_id =  $('.active').attr('id');
+    $(".nav_menu ul li a").mouseover(function(){ 
+    	$('.nav_menu').find('a').attr('class','');
+    	$(this).attr('class','active');
+    });
+    
+    $(".nav_menu ul li a").mouseout(function(){    	
+    	$(this).attr('class','');
+		$("#"+ac_id).attr('class','active');
+    });
+	
+	 $(".nav_menu ul li a").click(function(){    	
+		$('.nav_menu').find('a').attr('class','');
+		$(this).attr('class','active');
+		ac_id = $(this).attr('id');
+    });
+
+});
+</script>
+<input type="hidden" id="student_info_complete" value="">
+<input name="student_index_msg_7357" type="hidden" class="inputMsg" value="<p style=&quot;white-space: normal; font-family: Calibri, sans-serif; text-indent: 37px; line-height: 1.5em;&quot;><span style=&quot;font-family: 楷体, 楷体_GB2312, SimKai; font-size: 19px; line-height: 28px; color: rgb(0, 0, 0);&quot;>亲爱的老师：</span></p><p style=&quot;white-space: normal; font-family: Calibri, sans-serif; text-indent: 37px; line-height: 1.5em;&quot;><span style=&quot;color: rgb(0, 0, 0);&quot;><span style=&quot;color: rgb(0, 0, 0); font-family: 楷体, 楷体_GB2312, SimKai;&quot;><span style=&quot;color: rgb(0, 0, 0); font-size: 19px; line-height: 28px; font-family: 楷体;&quot;>您好！</span><span style=&quot;color: rgb(0, 0, 0); font-size: 19px; line-height: 28px;&quot;>欢迎参加</span></span><span style=&quot;color: rgb(0, 0, 0); font-size: 19px; line-height: 28px; font-family: 楷体;&quot;>“雷州市教研员素养提升培训项目”，</span><span style=&quot;color: rgb(0, 0, 0); font-family: 楷体, 楷体_GB2312, SimKai;&quot;><span style=&quot;color: rgb(0, 0, 0); font-size: 19px; line-height: 28px; font-family: 楷体;&quot;>本次培训周期为</span><span style=&quot;color: rgb(0, 0, 0); font-size: 19px; line-height: 28px; font-family: &amp;quot;Times New Roman&amp;quot;, serif;&quot;>2022</span><span style=&quot;color: rgb(0, 0, 0); font-size: 19px; line-height: 28px; font-family: 楷体;&quot;>年</span><span style=&quot;color: rgb(0, 0, 0); font-size: 19px; line-height: 28px; font-family: &amp;quot;Times New Roman&amp;quot;, serif;&quot;>12</span><span style=&quot;color: rgb(0, 0, 0); font-size: 19px; line-height: 28px; font-family: 楷体;&quot;>月</span><span style=&quot;color: rgb(0, 0, 0); font-size: 19px; line-height: 28px; font-family: &amp;quot;Times New Roman&amp;quot;, serif;&quot;>23</span><span style=&quot;color: rgb(0, 0, 0); font-size: 19px; line-height: 28px; font-family: 楷体;&quot;>日</span><span style=&quot;color: rgb(0, 0, 0); font-size: 19px; line-height: 28px; font-family: &amp;quot;Times New Roman&amp;quot;, serif;&quot;>-1</span><span style=&quot;color: rgb(0, 0, 0); font-size: 19px; line-height: 28px; font-family: 楷体;&quot;>月8</span></span><span style=&quot;color: rgb(0, 0, 0); font-family: 楷体; font-size: 19px;&quot;>日。首次进入工作室，请认真阅读培训公告里面的</span><strong style=&quot;font-family: 楷体; font-size: 19px;&quot;>【训前指引】</strong><span style=&quot;color: rgb(0, 0, 0); font-family: 楷体; font-size: 19px;&quot;>，以便您更快的了解本次培训的任务。</span></span></p><p style=&quot;white-space: normal; font-family: Calibri, sans-serif; text-indent: 37px; line-height: 1.5em;&quot;><span style=&quot;font-family: 楷体, 楷体_GB2312, SimKai; color: rgb(0, 0, 0);&quot;><span style=&quot;color: rgb(0, 0, 0); font-size: 19px; line-height: 28px; font-family: 楷体;&quot;>本次培训考核包括</span><strong><span style=&quot;color: rgb(0, 0, 0); font-size: 19px; line-height: 28px; font-family: 楷体;&quot;>课程学习、论坛研讨和资源分享</span></strong><span style=&quot;color: rgb(0, 0, 0); font-size: 19px; line-height: 28px; font-family: 楷体;&quot;>，每项考核对应一定比例的分值，请大家按照要求完成。具体可查看平台培训公告中的【<strong>考核方案</strong>】。</span></span></p><p style=&quot;margin-top: 8px; margin-bottom: 0px; white-space: normal; font-family: Calibri, sans-serif; text-indent: 37px; line-height: 1.5em;&quot;><span style=&quot;font-family: 楷体, 楷体_GB2312, SimKai; color: rgb(0, 0, 0);&quot;><span style=&quot;color: rgb(0, 0, 0); font-size: 19px; font-family: 楷体;&quot;>如若遇到</span><span style=&quot;color: rgb(0, 0, 0); font-size: 19px; font-family: &amp;quot;Times New Roman&amp;quot;, serif;&quot;>“</span><span style=&quot;color: rgb(0, 0, 0); font-size: 19px; font-family: 楷体;&quot;>无法查看课程视频</span><span style=&quot;color: rgb(0, 0, 0); font-size: 19px; font-family: &amp;quot;Times New Roman&amp;quot;, serif;&quot;>”</span><span style=&quot;color: rgb(0, 0, 0); font-size: 19px; font-family: 楷体;&quot;>、</span><span style=&quot;color: rgb(0, 0, 0); font-size: 19px; font-family: &amp;quot;Times New Roman&amp;quot;, serif;&quot;>“</span><span style=&quot;color: rgb(0, 0, 0); font-size: 19px; font-family: 楷体;&quot;>学习时间无法更新</span><span style=&quot;color: rgb(0, 0, 0); font-size: 19px; font-family: &amp;quot;Times New Roman&amp;quot;, serif;&quot;>”</span><span style=&quot;color: rgb(0, 0, 0); font-size: 19px; font-family: 楷体;&quot;>等问题，请联系工作室客服在线解答疑问。</span></span></p><p><br/></p>">
+
+<script type="text/javascript">
+	//需要完善个人信息
+	function student_info_complete(){
+		var info_complete = jQuery('#student_info_complete').val();
+	   	if(info_complete == 1){
+	   								dslx.pop.confirm({title:'请完善您的个人信息',css:{"width":"600px"},msg:"<div id='wsgrxx' style='margin:50px;padding:10px;font-size:16px;font-weight:600;border:1px dashed gray;text-align:center;'><a href='http://cas.study.teacheredu.cn/auth/work/index.html#/stu/edit?projectId=&toUrl=/proj/setProject?pid=&sysRoletypeId=32'>去完善个人资料</a></br><span style='margin-top:10px;'></span></div>",suportEsc:true,islock:true});
+			$("#wsgrxx").parent().parent().children(0).children("a:last-child").css("display","none");
+			$("#wsgrxx").parent().parent().css("position","fixed");
+			$("#wsgrxx").parent().parent().css("z-index","1000001");
+	   	}
+	}
+			    	
+	function zyMessage(){
+		$(".zyMessage").parent().parent().find('div:first').find('a:first').click();
+		//工作室通知可能会有多个，单个角色、全员，分别弹出通知内容，按发布周期的开始时间（较新的先弹）弹出。
+		$(".inputMsg").each(function(){
+  			var stuworkmsg=$(this).val();
+  			var name = $(this).prop("name");
+  			dslx.pop.confirm({title:"重要通知",css:{},msg:"<div class='zyMessage' style='margin:8px;'>"+stuworkmsg+"</div><div style='float:right;margin-right:35px;margin-bottom:5px'><input id='ignore' name='ignore' type='checkbox' value='"+name+"' />不再提醒</div>", css:{width:"600px"}, btnstyle:{float:"right"}, confirm:function(b){openVideo(); }, btns:[{txt:"确定",btnclass:"btn",value:"1"} ], autoclose:59000,suportEsc:false,islock:true});
+  		});
+  		$(".zyMessage").parent().parent().css("position","fixed");
+  		$(".zyMessage").parent().parent().css("z-index","1000000");
+	}
+	
+	$(function(){
+		$('#ignore').live('click', function(e){
+			var that = $(this);
+			var skipSet;
+			if (that.attr('checked') == 'checked'){
+				skipSet=1;
+			}else{
+				skipSet=0;
+			}
+			var name = $(that).prop("value");
+    		var length = name.length;
+    		var roleId = name.substring(length-2,length);
+    		var ajaxUrl;
+    		if(roleId =="_0"){
+    			ajaxUrl = "http://cas.study.teacheredu.cn/proj/pcadmin/notice/noticeConfigAjax/ignoreNotice.json?roleId=0&skip="+skipSet;
+    		}else{
+    			ajaxUrl = "http://cas.study.teacheredu.cn/proj/pcadmin/notice/noticeConfigAjax/ignoreNotice.json?skip="+skipSet;
+    		}
+			$.ajax({
+				url: ajaxUrl,
+				type: "get",
+				success: function (res) {
+					console.log("保存不再提醒："+res);
+				}
+			});
+		});
+	});
+</script>
+<div id="projecttoolNew" class="rmenu_g">
+    	<ul style="">
+        <li><a id="pager_0" class="active" href="http://cas.study.teacheredu.cn/proj/studentwork/indexNew?pid=24829"> 学员工作室  </a></li>
+    	    	            <li>
+                        	                				        					<a id="pager_1" title="湛江市" href="   http://cas.study.teacheredu.cn/proj/proj/area/index?projectId=24829&amp;aid=142303  " target="_blank">湛江市</a> |
+        					        				        			        			        				<a id="pager_2" title="雷州市" href=" http://cas.study.teacheredu.cn/proj/proj/area/index?projectId=24829&amp;aid=142305  " target="_blank">雷州市</a> |
+        				        			        		        							            			<a id="pager_3" title="雷州市杨家镇中心小学" href=" http://cas.study.teacheredu.cn/proj/proj/area/index?projectId=24829&amp;aid=142355 " target="_blank">雷州市杨家镇中心小学</a>
+            								        		    		</li>
+		            <li>
+                        							            			<a id="pager_5" title="雷州市教研员素养提升培训" href=" http://cas.study.teacheredu.cn/proj/proj/area/index?projectId=24829&amp;aid=142359 " target="_blank">雷州市教研员素养提升培训</a>
+            								        		    		</li>
+					</ul>
+	<input type="hidden" id="scTest" value="0">
+	<input type="hidden" id="answerCount" value="0">
+	<input type="hidden" id="courseCount" value="0">
+	<input type="hidden" id="testTool" value="1">
+	<input type="hidden" id="userId" value="1531109">
+    <input type="hidden" id="pid" value="24829">
+	
+</div>
+<!-- 四川问卷弹窗 -->
+<div class="wnlTC" id="scExam" style="display :none ;">
+    <div class="cont">
+        <div class="top"></div>
+        <div class="bottom">
+            <p class="title">根据项目要求，您需要填写训前问卷调查，<br>系统将根据您的需求为您推荐课程。</p>
+            <div class="goTest" onclick="goExam()">去填写</div>
+        </div>
+        <!--<div class="chazi">X</div>-->
+    </div>
+</div>
+<script>
+ function goExam(){
+    	var url="/ev/cs/quesInvest.html?userId=1531109&projectId=24829";
+    	window.location.href=url;
+    }
+ function aplipay(price){
+    	var url="http://cas.study.teacheredu.cn/proj/alipay/mandatory_alipay_info.htm?status=1";
+    	window.location.href=url;
+    }
+	
+jQuery(function(){
+	var get_switch_role_config = false;
+	try {
+       	if(typeof goQujiaofeiPop === "function") { //是函数    其中 FunName 为函数名称
+           get_switch_role_config = get_switch_role_config();
+        } else { //不是函数
+        }
+    } catch(e) {
+    }
+	if(get_switch_role_config){
+	
+	}else{
+		goQujiaofeiPop();
+	}		
+});
+function goQujiaofeiPop(){
+	var url = "http://cas.study.teacheredu.cn/proj/pcadmin/alipay/AlipayListShow/openPrice.json";
+   	jQuery.getJSON(url,function(data){
+   		if(typeof(data) != "undefined" && data != '' && data != null)
+   		{
+   			var myobj=JSON.parse(data);
+   			var isopean=myobj.status;
+   			var price=myobj.price;
+   			if(isopean==0){
+   				//var url=;
+   				$(".zyMessage").parent().parent().find('div:first').find('a:first').click();
+				var url=window.location.href;
+				if(url.indexOf("/proj/alipay/alipay_index") <= 0){//这个页面不提示
+           			dslx.pop.pop({title:'温馨提示',css:{width:"390px"},isneed:false,msg:'<div class="zTreeDemoBackground left"> <ul id="dict_tree_con" class="ztree"></ul><dd class="mesWindowbtn" style="margin-top:70px;margin-left:60px"><a class="btn" style="width:90px" href="javascript:void(0);" onclick="aplipay('+price+');dslx.pop.close(this);">去缴费</a></dd></div>'});
+					var pid = jQuery('#pid').val();
+           			if(pid==6095 || pid==6097){//福建单独要的提示语
+						var msg='<div class="borderdiv" id="changerole">'+
+								'<div><span class="titletxt" style="margin-left:10px;font-size:15px">您好，请点击下方“去缴费”完成缴费后方可开始学习!</span>'+
+								'<br/>'+
+								'</div>';
+					}else if(pid == 14929 || pid == 17121){
+						var msg='<div class="borderdiv" id="changerole">'+
+								'<div><span class="titletxt" style="margin-left:10px;font-size:15px">感谢您在学习路上付出的辛勤努力！请完成缴费后再继续学习吧！</span>'+
+								'<br/>'+'<span class="titletxt" style="margin-left:10px;font-size:15px">个人缴费注意事项:</span>'+'<br/>'+'<span class="titletxt" style="margin-left:10px;font-size:15px">1.如需单位报销，请准确填写单位发票抬头及纳税识别号，以及电子发票收件邮箱；</span>'+
+								'<br/>'+'<span class="titletxt" style="margin-left:10px;font-size:15px">2.如申请开具个人发票，发票抬头请填写个人姓名，纳税识别号统一填写为：0000，以及电子发票收件邮箱；</span>'+
+								'<br/>'+'<span class="titletxt" style="margin-left:10px;font-size:15px">3.如无需提供发票，发票抬头填写：无 ，纳税识别号统一填写为：0000，备注：无需开具发票。</span>'+
+								'</div>';
+
+					}else{
+						var msg='<div class="borderdiv" id="changerole">'+
+								'<div><span class="titletxt" style="margin-left:10px;font-size:15px">感谢您在学习路上付出的辛勤努力！'+'<br/>'+'您的预学习时间已经告罄，请完成缴费后再继续学习吧！</span>'+
+								'<br/>'+
+								'</div>';
+					}
+                           	jQuery("#dict_tree_con").html(msg);
+				}
+   			}else if(isopean == 3){//支付未完成
+   				$(".zyMessage").parent().parent().find('div:first').find('a:first').click();
+   				
+				var url=window.location.href;
+				if( url.indexOf("alipayIndex") <=0){//这个页面不提示
+					dslx.pop.pop({title:'温馨提示',css:{width:"390px"},isneed:false,msg:'<div class="zTreeDemoBackground left"> <ul id="dict_tree_con" class="ztree"></ul><dd class="mesWindowbtn" style="margin-top:70px;margin-left:60px"><a class="btn" style="width:90px" href="javascript:void(0);" onclick="goPay();dslx.pop.close(this);">去缴费</a></dd></div>'});
+					var pid = jQuery('#pid').val();
+					if(pid==6095 || pid==6097){//福建单独要的提示语
+						var msg='<div class="borderdiv" id="changerole">'+
+								'<div><span class="titletxt" style="margin-left:10px;font-size:15px">您好，请点击下方“去缴费”完成缴费后方可开始学习!</span>'+
+								'<br/>'+
+								'</div>';
+					}else if(pid == 14929 || pid == 17121){
+						var msg='<div class="borderdiv" id="changerole">'+
+								'<div><span class="titletxt" style="margin-left:10px;font-size:15px">感谢您在学习路上付出的辛勤努力！请完成缴费后再继续学习吧！</span>'+
+								'<br/>'+'<span class="titletxt" style="margin-left:10px;font-size:15px">个人缴费注意事项:</span>'+'<br/>'+'<span class="titletxt" style="margin-left:10px;font-size:15px">1.如需单位报销，请准确填写单位发票抬头及纳税识别号，以及电子发票收件邮箱；</span>'+
+								'<br/>'+'<span class="titletxt" style="margin-left:10px;font-size:15px">2.如申请开具个人发票，发票抬头请填写个人姓名，纳税识别号统一填写为：0000，以及电子发票收件邮箱；</span>'+
+								'<br/>'+'<span class="titletxt" style="margin-left:10px;font-size:15px">3.如无需提供发票，发票抬头填写：无 ，纳税识别号统一填写为：0000，备注：无需开具发票。</span>'+
+								'</div>';
+
+					}else{
+						var msg='<div class="borderdiv" id="changerole">'+
+								'<div><span class="titletxt" style="margin-left:10px;font-size:15px">感谢您在学习路上付出的辛勤努力！'+'<br/>'+'您的预学习时间已经告罄，请完成缴费后再继续学习吧！</span>'+
+								'<br/>'+
+								'</div>';
+					}
+                           	jQuery("#dict_tree_con").html(msg);
+				}
+			}else{
+				var scTest = $("#scTest").val();
+				var answerCount = $("#answerCount").val();
+				var courseCount = $("#courseCount").val();					
+				student_info_complete();
+				//代表四川推课测评
+				if(scTest == "1"){
+					if(answerCount == 0){
+					    //跳到弹窗	
+					    $("#scExam").show();
+					    return false;
+					}else{
+						if(courseCount == 0){
+						//跳到推荐选课列表
+						$("body").append('<div class="addIframe1"><iframe onclick="" id="myiframe" frameborder=0 width="1200px" height="580px" src="/ev/cs/couRecom.html?userId=1531109&projectId=24829"></iframe></div>');
+						return false;
+						}
+					}
+					
+				}
+				var testTool=$("#testTool").val();
+           		var userId=$("#userId").val();
+				var pid=$("#pid").val();
+           		//代表是浙江需要去测评条件
+           		if(testTool!=null){
+           		    if(testTool=='4'){
+               			var url = "http://cas.study.teacheredu.cn/proj/studentwork/index/goZjTest.json";
+                   		jQuery.ajax({			
+                              	type: "POST",
+                              	url: url,
+                   		   	dataType:"json",
+                              	data: {type:0},
+                              	success: function(msg){
+                       		   if(msg){
+                       				dslx.pop.pop({title:'测评提示',css:{"width":"400px"},msg:'<div style="text-align:center;font-size:18px;font-color:#000000;">您已经完成了基础课程学习,请先完成测评<dd style="height:25px;margin-top:10px;"><a class="titleTesting" href="javascript:void(0);"  onclick="getUrl();dslx.pop.close(this);">测评</a></dd></div>'});
+                       		   		zyMessage();
+                       		   	}else{
+                       		   		isGoquestionnaireAdd();
+                       		   	}
+                   			},
+                   			error:function(msg){
+                   				alert(msg);
+                   			}
+               				
+                   		});
+           			 }else if(testTool=='5'){
+               			   var url = "http://cas.study.teacheredu.cn/proj/studentwork/index/goAhTest.json";
+           				   var uri = "";
+           					jQuery.ajax({			
+                                  	type: "POST",
+                                  	url: url,
+                       		   	dataType:"json",
+                                  	data: {type:1},
+                                  	success: function(msg){
+                           		   if(msg){
+                           				dslx.pop.pop({title:'测评提示',css:{"width":"400px"},msg:'<div style="text-align:center;font-size:18px;font-color:#000000;">请先完成测评<dd style="height:25px;margin-top:10px;"><a class="titleTesting" href="'+uri+'" target="_blank"  onclick="dslx.pop.close(this);">测评</a></dd></div>'});
+                           		   		zyMessage();
+                           		   	}else{
+                           		   		isGoquestionnaireAdd();
+                           		   	}
+                       			},
+                       			error:function(msg){
+                       				alert(msg);
+                       			}
+                   				
+                       		});
+           			 }else if(testTool=='7'){
+           			  	           			 		isGoquestionnaireAdd();
+           			 	           			 }else if(testTool=='8'){
+           			  	           			 		isGoquestionnaireAdd();
+           			 	           			 }else{
+           			     //进入测评
+                       		var url = "http://cas.study.teacheredu.cn/proj/studentwork/index/goTest.json";
+                       		var uri = "http://gp.study.teacheredu.cn/Self_Testing.html?userid=";
+                       		jQuery.ajax({
+                                  type: "POST",
+                                  url: url,			   
+                       		   dataType:"json",
+                                  data: {type:0},
+                                  success: function(msg){
+                           		   if(msg){
+                           		   		uri = uri+userid+"&pid="+pid;
+                           				dslx.pop.pop({title:'测评提示',css:{"width":"400px"},msg:'<div style="text-align:center;font-size:18px;font-color:#000000;">请先完成测评<dd style="height:25px;margin-top:10px;"><a class="titleTesting" href="'+uri+'" target="_blank" onclick="dslx.pop.close(this);">确定</a></dd></div>'});
+                       		   			zyMessage();
+                       		   		}else{
+                       		   			isGoquestionnaireAdd();
+                       		   		}
+                       			},
+                       			error:function(msg){
+                       				alert(msg);
+                       			}
+                       		});
+           			 }	
+           		}else{
+           			isGoquestionnaireAdd();
+           		}
+			}
+   		}
+   	})
+}
+
+function isGoquestionnaireAdd(){
+			var isGoquestionnaireAdd_inp = $("#isGoquestionnaireAdd_inp").val();
+		if(isGoquestionnaireAdd_inp=="1"){
+			var questionnaireAddId_inp = $("#questionnaireAddId_inp").val();
+			var questionnaireAddPtcode_inp = $("#questionnaireAddPtcode_inp").val();
+	   		window.location.href="http://cas.study.teacheredu.cn/proj/studentwork/survey/questionnaireAddNew?id="+questionnaireAddId_inp+"&ptcode="+questionnaireAddPtcode_inp; 
+		}
+	}
+function getUrl(){
+		var url = "";
+		jQuery.ajax({			
+           	type: "POST",
+           	url: url,
+			async:false,//避免弹出窗口被浏览器拦截
+		   	dataType:"json",
+           	data: {},
+           	success: function(msg){			
+    		   if(msg.length > 0 ){
+			   		//避免弹出窗口被浏览器拦截
+			   		var newWin=window.open();
+					setTimeout(function(){
+						newWin.location=msg;
+					}, 1);
+    		   }else{
+			   		alert("进入测评失败！数据异常，请联系管理员。");
+			   }
+			},
+			error:function(msg){
+				alert(msg);
+			}
+		});
+}
+
+function goTest(){
+		//进入测评
+		var url = "http://cas.study.teacheredu.cn/proj/studentwork/index/goTest.json";
+		var uri = "http://gp.study.teacheredu.cn/Self_Testing.html?userid=";
+		jQuery.ajax({
+           type: "POST",
+           url: url,
+		   dataType:"json",
+           data: {type:1},
+           success: function(msg){
+		   if(msg){
+		   		uri = uri+userid+"&pid="+pid;
+		   		dslx.pop.pop({title:'测评提示',css:{"width":"400px"},msg:'<div style="text-align:center;font-size:18px;font-color:#000000;">请先完成测评<dd style="height:25px;margin-top:10px;"><a class="titleTesting" href="'+uri+'" target="_blank" onclick="dslx.pop.close(this);">确定</a></dd></div>'});
+		   }else{
+		        alert("按照要求只能测评3次，你已经测评3次了，不能测评了。");
+		   }
+		},
+			error:function(msg){
+				alert(msg);
+			}
+			});
+};
+
+jQuery(function(){
+				var ol=jQuery("#msg_ol");
+						
+		
+			var all=jQuery(".scroll_li_msg");
+			all.eq(0).show();
+			function scrollMsg(){
+        		var tar=jQuery(".scroll_li_msg:visible");
+    			tar.fadeOut(200,function(){
+        			var next=tar.next(".scroll_li_msg");
+        			if(next.length==0){
+        				next=jQuery(".scroll_li_msg").eq(0);
+        			}
+        			next.fadeIn(200);
+    				setTimeout(scrollMsg,5000);
+				});
+			}
+			scrollMsg();
+})
+</script>
+	</div>
+</div>
+
+<div class="head">
+	<div class="user">
+		    	    	    	 <!-- 本项目不需要通知 -->
+	    								<div class="xiaoxi" style="background:#BEBEBE;"><img src="xiaoxi.png" border="none"> <a target="_blank" href="http://cas.study.teacheredu.cn/proj/studentwork/notification_list.htm">通知(0)</a>
+									</div>
+										<a href="http://study.teacheredu.cn/uc/member/icon_edit.htm" title="更换头像"><img src=" http://files.study.teacheredu.cn/el/uc/face/user-default.jpg " onerror="this.onerror=null;this.src='http://files.study.teacheredu.cn//el/uc/face/war.jpg'" width="72" height="72" class="user_head"></a>
+				<div class="xinxi">
+			<p class="big">
+								<span class="xm">学员</span>
+									<a class="name" href="http://study.teacheredu.cn/uc/index.htm" title=" 林文敏 "> 林文敏 </a>
+					<span>
+																				<a target="_blank" href="http://cas.study.teacheredu.cn/auth/work/index.html#/stu/edit?projectId=24829&amp;toUrl=/proj/setProject?pid=24829&amp;sysRoletypeId=32">修改资料</a>
+											</span>
+							</p>
+			<p>
+				<img src="http://static.study.teacheredu.cn/el/pc/default/v1.0/gongzuoshi_new/images/line.png" width="700" height="1">
+			</p>
+			            <p class="remindtxt" id="remindtxt_id">
+
+
+	所属班级：<a href="http://cas.study.teacheredu.cn/proj/proj/classes/index.htm?projectId=$proj_id&amp;cid=26741" target="_blank">雷州市教研员素养提升培训班（34 人）</a>
+
+上次访问：
+
+</p>
+		</div>
+		<div class="jsqh_box">
+          <ul>
+          	 <!-- 本项目不需要角色切换 -->
+	             <li class="changejs">
+										<a class="show_switch_role_btn" hasrole="0" title="角色切换" onclick="dslx.pop.pop({title:' 角色  切换',msg:jQuery('#changerole_no')});">
+						 角色  切换
+					</a>
+									 </li>
+			 			 			  			            </ul>
+        </div>
+	</div>
+</div>
+ 	 <!-- 本项目不需要温馨提示 -->
+		<div class="modify_password mt10">
+			<div class="modify_password_cont w1100 auto">
+		    	<span class="fl">【温馨提示】你的密码强度较弱，出于安全考虑，请您及时更换密码！</span>
+									<a href="http://study.teacheredu.cn/uc/member/pwdEdit.vm" class="fl to_red modify_password_btn">修改密码</a>
+						        <a href="javascript:;" class="fr modify_password_close">x</a>
+		    </div>
+		</div>
+	  <div class="change_role_content" id="changerole_no" style="display:none;"><dd><ul><li><span style="color:red;">当前您无更多 角色  可以切换</span></li></ul></dd></div>
+<div class="change_role_content" id="changerole" style="display:none;">
+	<dd><ul><li>
+			   		            <input type="radio" name="role_select" value="http://cas.study.teacheredu.cn/proj/studentwork/index.htm?pid=24829&amp;puid=1531109"> 学员（雷州市教研员素养提升培训班）
+						   			
+	  </li> </ul>
+	  </dd>
+	   <dd class="mesWindowbtn"><a class="btn" href="javascript:void(0);" onclick="var v=jQuery(':checked[name=role_select]').val();if(v){window.location.href=v}else{alert('请选择 角色  ')}">确定</a><a class="btn" href="javascript:void(0);" onclick="dslx.pop.close(this);">取消</a></dd>
+   </div>
+<div class="mesWindow" id="xbChangeInfo" style="margin: 0px auto; width: 800px; left: 274.5px; top: 134px; position: fixed; z-index: 1000001;display: none">
+    <div class="mesWindowTop" style="cursor: move;">
+        <h1 class="msg_title" style="width:auto;">信息调整</h1>
+        <a class="close" style="float:right" href="javascript:void(0)" onclick="closeXbChange()">关闭</a>
+    </div>
+    <div class="mesWindowContent" style="height: auto; min-height: 50px; max-height: 477px; overflow: auto;">
+        <dd>
+            <div class="Warning"><p>调整学科时清除全部数据 / 只调整班级时用户数据同步到新班级，请慎重操作！</p></div>
+            <ul>
+                <li style="min-height: 30px;margin-top: 5px"><h1>条件选择</h1></li>
+                <div>
+                    <div id="detailArea"> 
+                    </div>
+                    <div id="detailSubject" style="margin-top: 10px;"> 
+                    </div>
+                    <div id="detailGrade" style="margin-top: 10px;"> 
+                    </div>
+					<input type="text" hidden="" value="" id="stageInfo">                </div>
+                <div id="xbClassDetail" style="margin-top: 10px;">
+
+                </div>
+            </ul>
+        </dd>
+        <dd class="mesWindowbtn">
+            <a class="btn" href="javascript:void(0);" onclick="dslx.pop.confirm('调整学科时清除全部数据 / 只调整班级时用户数据同步到新班级，请慎重操作！',function(v){v&amp;&amp;saveXbChangeInfo();});">保存</a>
+            <a class="btn" href="javascript:void(0);" onclick="closeXbChange()">取消</a>
+        </dd>
+    </div>
+</div>
+<script>
+	var xbChangeInfoData ;
+			function xbChangeInfo(){
+		var url="http://cas.study.teacheredu.cn/proj/student/XbChangeInfo/getInfo.json";
+		$("#detailArea").html("");
+        $("#detailSubject").html("");
+        $("#detailGrade").html("");
+		jQuery.ajax({
+			type: "POST",
+			url: url,
+			dataType:"json",
+			data: "",
+			success: function(data) {
+				//将数据放到全局，切换信息时减少io
+				xbChangeInfoData = data;
+				//层级可能是3级或四级
+				var areaMap1 = data.areaMap1;
+				var areaMap2 = data.areaMap2;
+				var areaMap3 = data.areaMap3;
+				var areaMap4 = data.areaMap4;
+				var level = data.level;
+				var userArea1 = data.user.dictIdLevel1;
+				var userArea2 = data.user.dictIdLevel2;
+				var userArea3 = data.user.dictIdLevel3;
+				var userArea4 = data.user.dictIdLevel4;
+				var areaFlag = "";
+				var subjectFlag = "";
+				var gradeFlag = "";
+
+				var str = "<span>层级</span><select id='area1'>";
+				$.each(areaMap1, function (k, v) {
+					str += "<option value='"+k+"'>"+v.name+"</option>"
+				});
+				str += "</select>";
+				$("#detailArea").append(str);
+				$("#area1 option[value='"+userArea1+"']").attr("selected","selected");
+
+				str = "<select id='area2'>";
+				$.each(areaMap2[userArea1], function (k, v) {
+					str += "<option value='"+v.id+"'>"+v.name+"</option>"
+				});
+				str += "</select>";
+				$("#detailArea").append(str);
+				$("#area2 option[value='"+userArea2+"']").attr("selected","selected");
+
+				str = "<select id='area3'>";
+				$.each(areaMap3[userArea2], function (k, v) {
+					str += "<option value='"+v.id+"'>"+v.name+"</option>"
+				});
+				str += "</select>";
+				$("#detailArea").append(str);
+				$("#area3 option[value='"+userArea3+"']").attr("selected","selected");
+
+				if(level == "4"){
+					str = "<select id='area4'>";
+					$.each(areaMap4[userArea3], function (k, v) {
+						str += "<option value='"+v.id+"'>"+v.name+"</option>"
+					});
+					str += "</select>";
+					$("#detailArea").append(str);
+					$("#area4 option[value='"+userArea4+"']").attr("selected","selected");
+				}
+				if(areaFlag == "0"){
+					$("#area1").attr("disabled",true);
+					$("#area2").attr("disabled",true);
+					$("#area3").attr("disabled",true);
+					if(level == "4"){
+						$("#area4").attr("disabled",true);
+					}
+				}
+				var userStage = data.user.usrDictId3 ; //当前用户得学段
+				var userSubject = data.userSubject; //当前用户得学科
+				var subjectMap = data.subjectMap;
+				//学科
+				str = "<span>学科</span><select id='detailSubjectSelect'>";
+				$.each(subjectMap[userStage], function (k, v) {
+					str += "<option value='"+v.id+"'>"+v.name+"</option>"
+				});
+				str += "</select>";
+				$("#detailSubject").append(str);
+				$("#detailSubjectSelect option[value='"+userSubject+"']").attr("selected","selected");
+				if(subjectFlag == "0"){
+					$("#detailSubjectSelect").attr("disabled",true);
+				}
+
+				//年级
+				var gradeMap = data.gradeMap;
+				var userGrade = data.user.usrDictId4 ; //当前用户得年级
+				str = "<span>年级</span><select id='detailGradeSelect'>";
+				$.each(gradeMap[userStage], function (k, v) {
+					str += "<option value='"+v.id+"'>"+v.name+"</option>"
+				});
+				str += "</select>";
+				$("#detailGrade").append(str);
+				$("#detailGradeSelect option[value='"+userGrade+"']").attr("selected","selected");
+				$("#stageInfo").val(userStage);
+				if(gradeFlag == "0"){
+					$("#detailGradeSelect").attr("disabled",true);
+				}
+				xbSearchClass();
+			}
+		});
+		$("#xbChangeInfo").show();
+	}
+
+	function saveXbChangeInfo(){
+
+		var usrdictid1 = $("#detailArea select:last").val(); //学校
+		var usrdictid2 = $("#detailSubjectSelect").val(); //学科
+		var usrdictid3 = $("#detailGradeSelect").val(); //年级
+		var stage = $("#stageInfo").val();
+	 	var us=new Array();
+		us.push(usrdictid1);
+		us.push(usrdictid2);
+		us.push(usrdictid3);
+		us.push(stage);
+		
+		var usrid=us.length>0?"&usrid="+(us.join("&usrid=")):"";
+		for(var i in us){
+			if(us[i]== -1){
+			    alert("请选择字典");
+				return;
+			}
+		}
+		
+		var flag=1;
+		var clsid=jQuery(":checked[name=clsid]").val();
+		if((!clsid)){
+			alert("请选择班级");
+			return;
+		}
+		
+		var url="http://cas.study.teacheredu.cn/proj/pcadmin/user/userAjax/saveUserClassinfo.json";
+		jQuery.ajax({
+           type: "POST",
+           url: url,
+		   dataType:"json",
+           data: "uid="+userid+"&clsid="+clsid+"&flag="+flag+usrid,
+           success: function(msg){
+		   		if(msg=="true"){
+					if(confirm("操作成功，是否刷新本页")){
+							window.location.reload();
+    				}else{
+    					 //alert("操作失败");
+    				}
+				}else{
+					alert(msg);
+				}
+           }
+        });
+	}
+
+	function closeXbChange(){
+		$("#xbChangeInfo").hide();
+	}
+
+	//判断是否需要执行事件绑定
+	var createOnchangeFlag = true;
+	function xbSearchClass(){
+
+		var usrdictid1 = $("#detailArea select:last").val(); //学校
+		var usrdictid2 = $("#detailSubjectSelect").val(); //学科
+		var stage = $("#stageInfo").val();
+	 	var us=new Array();
+		us.push(usrdictid1);
+		us.push(usrdictid2);
+		us.push(stage);
+		
+	 	var usrid=us.length>0?"&usrid="+(us.join("&usrid=")):"";
+		
+	 	for(var i in us){
+	 		if(us[i]==-1){
+	 			return;
+	 		}
+	 	}
+	 	if(usrid == beforePamars){
+	 		return ;
+		}
+		 beforePamars = usrid;
+	 	var url="http://cas.study.teacheredu.cn/proj/pcadmin/org/classAjax/queryClassWithUserDictAndUp.json";
+	 	jQuery.ajax({
+            type: "POST",
+            url: url,
+	 	   dataType:"json",
+            data: "id="+userid+beforePamars+"&isXb=",
+            success: function(msg){
+              	var con=jQuery("#xbClassDetail").empty().append("<li style='height: 30px;'><h1>班级选择</h1></li>");
+	 			for(var o in msg){
+	 				var c=msg[o];
+	 				var str="<li style='height: 30px;'><input type='radio' name='clsid' value='"+c.id+"'>"+c.classTitle+"("+c.classCount+"/"+c.classCountPre+")</li>";
+	 				con.append(str);
+	 			}
+	 			if(!msg||msg.length==0){
+	 				con.append("<p>当前选择项未查到匹配的班级，请重新选择条件</p>");
+	 			}else{
+    				$("input:radio[name='clsid'][value='"+xbChangeInfoData.userClassId+"']").prop("checked", "checked");
+    				var classFlag = "";
+    				if(classFlag == "0"){
+    					$("input:radio[name='clsid']").prop("disabled", true);
+    				}
+				}
+            }
+         });
+		 
+		//事件绑定只触发一次就可以
+		createOnchange();
+	}
+
+	function xbStageChange(stage){
+		//根据拿到的学段，重新渲染学科和年级
+		str = "";
+		$.each(xbChangeInfoData.subjectMap[stage], function (k, v) {
+			str += "<option value='"+v.id+"'>"+v.name+"</option>";
+		});
+		$("#detailSubjectSelect").html(str);
+		if("" == "0"){
+			$("#detailSubjectSelect").attr("disabled", true);
+		}
+		str = "";
+		$.each(xbChangeInfoData.gradeMap[stage], function (k, v) {
+			str += "<option value='"+v.id+"'>"+v.name+"</option>";
+		});
+		$("#detailGradeSelect").html(str);
+		if("" == "0"){
+			$("#detailGradeSelect").attr("disabled", true);
+		}
+		$("#stageInfo").val(stage);
+		xbSearchClass();
+	}
+	function createOnchange(){
+		if(createOnchangeFlag){
+			//生成点击事件
+			$('#area1').on('change',function(){
+				var val = $("#area1").val();
+				var str = "";
+				$.each(xbChangeInfoData.areaMap2[val], function (k, v) {
+					str += "<option value='"+v.id+"'>"+v.name+"</option>"
+				});
+				$('#area2').html(str);
+				xbSearchClass();
+			})
+			$('#area2').on('change',function(){
+				var val = $("#area2").val();
+				var str = "";
+				$.each(xbChangeInfoData.areaMap3[val], function (k, v) {
+					str += "<option value='"+v.id+"'>"+v.name+"</option>"
+				});
+				$('#area3').html(str);
+				xbSearchClass();
+			})
+			$('#area3').on('change',function(){
+				if(xbChangeInfoData.level == "4"){
+					var val = $("#area3").val();
+					var str = "";
+					$.each(xbChangeInfoData.areaMap4[val], function (k, v) {
+						str += "<option value='"+v.id+"'>"+v.name+"</option>"
+					});
+					$('#area4').html(str);
+					xbSearchClass();
+				}else{
+					//如果层级为3.则切换学校，可能会出现学段改变，需要重新渲染其他条件
+					var v2 = $("#area2").val();
+					var v3 = $("#area3").val();
+					var arr = xbChangeInfoData.areaMap3[v2];
+					var stage;
+					$.each(arr, function (k, v) {
+						if(v.id == v3){
+							stage = v.stageId;
+							return false;
+						}
+					});
+					xbStageChange(stage)
+				}
+			})
+			if(xbChangeInfoData.level == "4"){
+				$('#area4').on('change',function(){
+					var v3 = $("#area3").val();
+					var v4 = $("#area4").val();
+					var arr = xbChangeInfoData.areaMap4[v3];
+					var stage;
+					$.each(arr, function (k, v) {
+						if(v.id == v4){
+							stage = v.stageId;
+							return false;
+						}
+					});
+					xbStageChange(stage)
+				})
+			}
+			//学科
+			$("#detailSubjectSelect").on('change',function(){
+				xbSearchClass();
+			});
+
+			//年级
+			$("#detailGradeSelect").on('change',function(){
+				//xbSearchClass();
+			});
+
+			createOnchangeFlag = false;
+		}
+	}
+</script>
+
+
+
+<div id="changeclass" style="display:none;">
+										    	<dd>
+            <div class="Warning"><p>调整学科时清除全部数据 / 只调整班级时用户数据同步到新班级，请慎重操作！</p></div>
+            <ul>
+				<li style="min-height: 30px;margin-top: 5px"><h1>条件选择</h1></li>
+				<div id="type_con"></div>
+				<div id="cls_con"></div>
+            </ul>
+        </dd>
+	   <dd class="mesWindowbtn">
+		   <a class="btn" href="javascript:void(0);" onclick="dslx.pop.confirm('调整学科时清除全部数据 / 只调整班级时用户数据同步到新班级，请慎重操作！',function(v){v&amp;&amp;saveUserClassinfo();});">保存</a>
+		   <a class="btn" href="javascript:void(0);" onclick="dslx.pop.close(this);">取消</a>
+	   </dd>
+</div>
+   <div id="notice">
+<div id="msg_win" style="display: none; top: 948px; visibility: visible; opacity: 1; z-index: 1000;">
+	<div class="icos"><a id="msg_min" title="最小化" href="javascript:void 0">0</a><a id="msg_close" title="关闭" href="javascript:void 0">r</a></div>
+	<div id="msg_title">信息通知</div>
+	<div id="msg_content">
+		<ul>
+							<div class="nomessages"> 您目前没有可供阅读的通知信息。 </div>
+					</ul>
+	</div>
+	<p style="float:right"><a href="http://cas.study.teacheredu.cn/proj/studentwork/notification_list.htm">[更多...]</a></p>
+</div>
+
+
+</div>
+<script>
+jQuery("#remindtxt_id").load("http://cas.study.teacheredu.cn/proj/studentwork/leftClassData?r="+Math.random());
+jQuery("#notice").load("http://cas.study.teacheredu.cn/proj/studentwork/notice?r="+Math.random());
+
+</script>
+<!--头部结束-->
+<div class="wxs wrap weizhi">	
+    <!--左侧导航-->
+    <div class="content">
+		        				<link rel="stylesheet" type="text/css" href="pop.css">
+<script src="http://static.study.teacheredu.cn/el/pc/default/v1.0/gongzuoshi_admin/js/nPop.js" type="text/javascript" charset="utf-8"></script>
+<style>
+	.changecolor{
+		text-decoration:none;
+	}
+</style>
+            <div class="side">
+        	<div class="sidebar">			
+        		        			<ul>
+                          					<p class="xxzx" title="学习中心">学习中心</p>
+    				      				      					    					    					    						<li><a class="changecolor" href="/assets/file/2023/01/%E9%9B%B7%E5%B7%9E%E5%B8%82%E6%95%99%E7%A0%94%E5%91%98%E7%B4%A0%E5%85%BB%E6%8F%90%E5%8D%87%E5%9F%B9%E8%AE%AD%E9%A1%B9%E7%9B%AE/%E9%9B%B7%E5%B7%9E%E5%B8%82%E6%95%99%E7%A0%94%E5%91%98%E7%B4%A0%E5%85%BB%E6%8F%90%E5%8D%87%E5%9F%B9%E8%AE%AD%E9%A1%B9%E7%9B%AE.html">查看成绩</a></li>
+    					                          					    					    					    						<li><a class="changecolor" href="  http://cas.study.teacheredu.cn/proj/studentwork/article/articleListNew?ptcode=37001&amp;menuRefId=63999  ">培训公告</a></li>
+    					                          					    					    					    						<li><a class="changecolor" href="  http://cas.study.teacheredu.cn/proj/studentwork/gpCategoryCourseNew?ptcode=34101&amp;menuRefId=63995  ">课程选择</a></li>
+    					                          					    					    					    						<li><a class="changecolor" href="/assets/file/2023/01/%E9%9B%B7%E5%B7%9E%E5%B8%82%E6%95%99%E7%A0%94%E5%91%98%E7%B4%A0%E5%85%BB%E6%8F%90%E5%8D%87%E5%9F%B9%E8%AE%AD%E9%A1%B9%E7%9B%AE/(%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0)%E9%9B%B7%E5%B7%9E%E5%B8%82%E6%95%99%E7%A0%94%E5%91%98%E7%B4%A0%E5%85%BB%E6%8F%90%E5%8D%87%E5%9F%B9%E8%AE%AD%E9%A1%B9%E7%9B%AE.html">课程学习</a></li>
+    					                          					    					    					    						<li><a class="changecolor" href="  http://cas.study.teacheredu.cn/proj/studentwork/swap/communicateListNew?ptcode=40001&amp;menuRefId=64003  ">在线研讨</a></li>
+    					                          					    					    					    						<li><a class="changecolor" href="  http://cas.study.teacheredu.cn/proj/studentwork/article/articleListNew?ptcode=37002&amp;menuRefId=64001  ">资源分享</a></li>
+    					                                          </ul>
+        		        			<ul>
+                          					<p class="yxzx" title="研修中心">研修中心</p>
+    				      				                      </ul>
+        		        			<ul>
+                          					<p class="zyzx" title="研修工具">研修工具</p>
+    				      				      					    					    					    						<li><a class="changecolor" href="http://st1.fxl.teacheredu.cn/resources/index.html?menuRefId=63985">E优资源站</a></li>
+    					                          					    					    					    						<li><a class="changecolor" href="http://course.teacheredu.cn/web/index.html?menuRefId=63987">助教V课程</a></li>
+    					                          					    					    					    						<li><a class="changecolor" href="  http://cas.study.teacheredu.cn/proj/resourcelib/index?isAll=1&amp;menuRefId=63989  " target="_blank">资源中心</a></li>	
+    					    					    					                                          </ul>
+        		        	</div>
+        </div>
+      <script>
+    $(function () {
+        $(".changecolor").click(function () {
+             cur.style.backgroundColor = "#FFF";
+             cur.style.color = "#333333"
+             obj.style.backgroundColor = "#9A99FF";
+             obj.style.color = "#FFF"
+             cur = obj;
+        });
+    })
+
+    var cur = document.getElementById("changecolor");
+    function change(obj) {
+      cur.style.backgroundColor = "#FFF";
+      cur.style.color = "#333333"
+      obj.style.backgroundColor = "#9A99FF";
+      obj.style.color = "#FFF"
+      cur = obj;
+    }
+  </script>
+
+	
+				        <!--右侧内容-->
+        <div class="rxs right">
+        <!--右侧内容区域-->
+            
+<link href="pop.css" rel="stylesheet" type="text/css">
+<link href="gzs_jdyx.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" type="text/css" href="common_new.css">
+<link rel="stylesheet" type="text/css" href="gzs.css">
+<link rel="stylesheet" type="text/css" href="gzs_list.css">
+
+<script type="text/javascript" src="http://static.study.teacheredu.cn/el/pc/default/v1.0/gongzuoshi_new/js/teacheredupop.js"></script>
+
+ <!--当前位置-->
+<div class="gzs_main"> 
+	<!--当前位置-->
+	<a href="javascript:;" id="tshide" style="display:none;">--</a>
+	<div class="clearance" style="display: none;"></div>
+    <div class="current_Position">
+      <ul class="current_list">
+        <li>当前位置：</li>
+        <li><a href="/assets/file/2023/01/%E9%9B%B7%E5%B7%9E%E5%B8%82%E6%95%99%E7%A0%94%E5%91%98%E7%B4%A0%E5%85%BB%E6%8F%90%E5%8D%87%E5%9F%B9%E8%AE%AD%E9%A1%B9%E7%9B%AE/%E9%9B%B7%E5%B7%9E%E5%B8%82%E6%95%99%E7%A0%94%E5%91%98%E7%B4%A0%E5%85%BB%E6%8F%90%E5%8D%87%E5%9F%B9%E8%AE%AD%E9%A1%B9%E7%9B%AE.html">工作室首页</a><em>&gt;</em></li>
+		        <li class="last"><a href="/assets/file/2023/01/%E9%9B%B7%E5%B7%9E%E5%B8%82%E6%95%99%E7%A0%94%E5%91%98%E7%B4%A0%E5%85%BB%E6%8F%90%E5%8D%87%E5%9F%B9%E8%AE%AD%E9%A1%B9%E7%9B%AE/(%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0)%E9%9B%B7%E5%B7%9E%E5%B8%82%E6%95%99%E7%A0%94%E5%91%98%E7%B4%A0%E5%85%BB%E6%8F%90%E5%8D%87%E5%9F%B9%E8%AE%AD%E9%A1%B9%E7%9B%AE.html">课程学习</a></li>
+      </ul>
+    </div>
+    <div class="clearance"></div>
+  <!--title-->
+  <div class="mian_title1 clear">
+    <h2>课程学习</h2>
+    <h3>
+					<span>
+				共选了<em id="selectCount">9</em>门课
+				<span id="limit_span">，共<em id="limit">48</em>个学时				</span>
+			</span>
+							    			    				<a href="http://cas.study.teacheredu.cn/proj/studentwork/gp_category_course_new.htm?category=1&amp;ptcode=34101&amp;stageId=0">去选课</a>
+    							   	</h3>
+  </div>
+  
+		
+<style>
+    .pt4{padding-top: 4px;}
+    .borderNone{
+        border: 0 !important;
+    }
+    .khyqWrap{
+        border: 1px dashed #8385DB;
+        padding-bottom: 10px;
+        margin-top: 20px;
+    }
+    .khAsk {
+        width: 860px;
+        height: auto;
+        padding: 10px 0;
+        margin: 0 auto;
+        border-bottom: 1px dashed #D0D0F5;
+    }
+    .khAsk .p1{
+        color: #999999;
+        font-weight: bold;
+        padding: 15px 0 0 0;
+    }
+    .khAsk .p2{
+        color: #666666;
+    }
+    .khAsk .p2 .span1{
+        color: #000;
+        font-weight: bold;
+    }
+    .khAsk .p2 .colRed{
+        color: #FF1122;
+    }
+    .khAsk .pShouQi{
+        color: #8385DB;
+        cursor: pointer;
+    }
+    .khAsk .pShouQi .sqJiantou i {
+        border: solid #8385DB;
+        border-width: 0 1px 1px 0;
+        display: inline-block;
+        padding: 3px;
+        float: right;
+    }
+    .khAsk .pShouQi .sqJiantou .up {
+        transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+        margin-top: 11px;
+        margin-left: 3px;
+    }
+    .khAsk .pShouQi .sqJiantou .down {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        margin-top: 7px;
+        margin-left: 3px;
+    }
+    .khAsk .flexBox{
+        width: 785px;
+        display: flex;
+        justify-content: left;
+        flex-direction: row;
+        text-align: left;
+    }
+    .kcTc{
+        float: left;
+        font-size: 14px;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+    .kcxx_list .list_title{
+        color: #6666cc;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .fontWeight{
+        font-weight: bold;
+    }
+    .ml100{
+        margin-left: 100px;
+    }
+    .pb5{
+        padding-bottom: 5px;
+    }
+
+    
+    .contThree .rCont .pointCir{
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #FB7676;
+        margin-top: 8px;
+        float: left;
+    }
+    .contThree .rCont .name{
+        font-size: 14px;
+        margin-left: 5px;
+        color: #333;
+        float: left;
+    }
+    .rs_jindu_line{ overflow:hidden;position:relative; display:inline-block; margin:4px 0 0 30px !important; height:15px; width:200px; background: #f1f1f1;;margin-top: 6px;border-radius: 15px;height: 10px;}
+    .rs_jindu_now{ position:absolute; left:0; top:0; height:10px; background:#FB7676; display:inline-block;border-radius: 15px;}
+    .contThree .rCont .percent{
+        font-size: 12px;
+        color: #FB7676;
+        line-height: 20px;
+        float: left;
+    }
+    .contThree .rCont .finish{
+        font-size: 14px;
+        color: #fff;
+        background: #FE9A00;
+        text-align: center;
+        border-radius: 5px;
+        padding: 0 20px;
+        margin-left: 10px;
+        float: left;
+    }
+    .contThree .rCont .pWords{
+        color: #666666;
+    }
+    .contThree .rCont .pWords span{
+        color: #FB7676;
+    }
+</style>
+
+	
+	
+  
+  <div class="kecheng_tab">
+      <a id="serTitle" class="active" href="javascript:reloadContent('button_content1','courseStudyList.htm?ptcode=34101&amp;stageId=0');" onclick="$('#ser').show()">培训课程学习</a>
+	        <a href="javascript:reloadContent('button_content1','http://cas.study.teacheredu.cn/proj/studentwork/course_study_a_i_list.htm?ptcode=34101&amp;stageId=0&amp;render=button_content1&amp;pageTo=http://cas.study.teacheredu.cn/proj/studentwork/course_study_a_i_list.htm');" class="" onclick="$('#ser').hide();$('#search_course_name').val('')">AI推荐（微课）</a>
+	    </div>
+  	<div class="Choice_ser clear" id="ser">
+		<input type="text" id="search_course_name" placeholder="搜课程" onkeydown="searchKeyDown();">
+	    <a href="javascript:;" onclick="searchCourse();">搜索</a>
+	</div>
+  <!--title--> 
+  <!--list-->
+  <div class="kcxx_list clear ai_list">
+    <div id="button_content1">
+<style>
+.bq_xs i{
+		line-height:normal;
+    	font-size:10px;
+		transform:scale(0.8);
+    	-webkit-transform:scale(0.8);
+        color: #fff;
+		display:inline-block
+	}
+.list {
+	height: auto;
+	overflow: hidden;
+	padding-bottom: 10px;
+}
+</style>
+ 	 	 <div class="list">
+		 <div class="kcxx_side_title fl Course_list_info">
+			 <p class="kcal_title" title="中国未成年人保护面临的挑战、发展和建议">
+				 <a href="javascript:void(0);" onclick="goStudy('386785')">
+					 中国未成年人保护面临的挑战、发展和建议
+				 </a>
+			 </p>
+			 <p class="xk_rs clear">
+                	<span class="fl" style="margin-right: 10px;">已学习
+																					101
+																		分钟</span>
+				 			 </p>
+			 		 </div>
+		 <div class="kcxx_side_bq fl" style="height: 72px;">
+			 <ul>
+				 					 <li class="bq_xs">
+						 <i>
+							  6.0  学时						 </i>
+					 </li>
+				 				 					   <li class="bq_xx"> 选修</li>				 				 <li class="bq_zt">进行中</li> 			 </ul>
+		 </div>
+		 <div class="kcxx_side_time fr" style="height: 72px;">
+			 			 <p class="xx_sj">有<span>14</span>人选了此课</p>
+			 <p class="xx_pl">
+				 				 					 					 <a href="javascript:void(0);">评论(<span class="pl_count_$article.id">7</span>)</a>
+				 				 					 <a class="qxx" href="javascript:void(0);" onclick="goStudy('386785')">
+						 去学习
+						 					 </a>
+				 				 <input type="hidden" id="qualifiedTime386785" value="">				 				 
+			 </p>
+		 </div>
+		 <p class="xk_rs clear">
+			 		 </p>
+	 </div>
+	 	 <div class="list">
+		 <div class="kcxx_side_title fl Course_list_info">
+			 <p class="kcal_title" title="教师立德树人教育的思维与策略">
+				 <a href="javascript:void(0);" onclick="goStudy('386787')">
+					 教师立德树人教育的思维与策略
+				 </a>
+			 </p>
+			 <p class="xk_rs clear">
+                	<span class="fl" style="margin-right: 10px;">已学习
+																					50
+																		分钟</span>
+				 			 </p>
+			 		 </div>
+		 <div class="kcxx_side_bq fl" style="height: 72px;">
+			 <ul>
+				 					 <li class="bq_xs">
+						 <i>
+							  5.0  学时						 </i>
+					 </li>
+				 				 					   <li class="bq_xx"> 选修</li>				 				 <li class="bq_zt">进行中</li> 			 </ul>
+		 </div>
+		 <div class="kcxx_side_time fr" style="height: 72px;">
+			 			 <p class="xx_sj">有<span>19</span>人选了此课</p>
+			 <p class="xx_pl">
+				 				 					 					 <a href="javascript:void(0);">评论(<span class="pl_count_$article.id">7</span>)</a>
+				 				 					 <a class="qxx" href="javascript:void(0);" onclick="goStudy('386787')">
+						 去学习
+						 					 </a>
+				 				 <input type="hidden" id="qualifiedTime386787" value="">				 				 
+			 </p>
+		 </div>
+		 <p class="xk_rs clear">
+			 		 </p>
+	 </div>
+	 	 <div class="list">
+		 <div class="kcxx_side_title fl Course_list_info">
+			 <p class="kcal_title" title="牢记党的宗旨，坚持以人民为中心——学习习近平总书记“不忘初心、牢记使命”主题教育工作会议重要讲话的体会">
+				 <a href="javascript:void(0);" onclick="goStudy('386789')">
+					 牢记党的宗旨，坚持以人民为中心——学习习近平总书记“不忘初心、...
+				 </a>
+			 </p>
+			 <p class="xk_rs clear">
+                	<span class="fl" style="margin-right: 10px;">已学习
+																					50
+																		分钟</span>
+				 			 </p>
+			 		 </div>
+		 <div class="kcxx_side_bq fl" style="height: 72px;">
+			 <ul>
+				 					 <li class="bq_xs">
+						 <i>
+							  5.0  学时						 </i>
+					 </li>
+				 				 					   <li class="bq_xx"> 选修</li>				 				 <li class="bq_zt">进行中</li> 			 </ul>
+		 </div>
+		 <div class="kcxx_side_time fr" style="height: 72px;">
+			 			 <p class="xx_sj">有<span>14</span>人选了此课</p>
+			 <p class="xx_pl">
+				 				 					 					 <a href="javascript:void(0);">评论(<span class="pl_count_$article.id">3</span>)</a>
+				 				 					 <a class="qxx" href="javascript:void(0);" onclick="goStudy('386789')">
+						 去学习
+						 					 </a>
+				 				 <input type="hidden" id="qualifiedTime386789" value="">				 				 
+			 </p>
+		 </div>
+		 <p class="xk_rs clear">
+			 		 </p>
+	 </div>
+	 	 <div class="list">
+		 <div class="kcxx_side_title fl Course_list_info">
+			 <p class="kcal_title" title="学习困难学生的识别及指导">
+				 <a href="javascript:void(0);" onclick="goStudy('386791')">
+					 学习困难学生的识别及指导
+				 </a>
+			 </p>
+			 <p class="xk_rs clear">
+                	<span class="fl" style="margin-right: 10px;">已学习
+																					50
+																		分钟</span>
+				 			 </p>
+			 		 </div>
+		 <div class="kcxx_side_bq fl" style="height: 72px;">
+			 <ul>
+				 					 <li class="bq_xs">
+						 <i>
+							  4.0  学时						 </i>
+					 </li>
+				 				 					   <li class="bq_xx"> 选修</li>				 				 <li class="bq_zt">进行中</li> 			 </ul>
+		 </div>
+		 <div class="kcxx_side_time fr" style="height: 72px;">
+			 			 <p class="xx_sj">有<span>16</span>人选了此课</p>
+			 <p class="xx_pl">
+				 				 					 					 <a href="javascript:void(0);">评论(<span class="pl_count_$article.id">6</span>)</a>
+				 				 					 <a class="qxx" href="javascript:void(0);" onclick="goStudy('386791')">
+						 去学习
+						 					 </a>
+				 				 <input type="hidden" id="qualifiedTime386791" value="">				 				 
+			 </p>
+		 </div>
+		 <p class="xk_rs clear">
+			 		 </p>
+	 </div>
+	 	 <div class="list">
+		 <div class="kcxx_side_title fl Course_list_info">
+			 <p class="kcal_title" title="疫情下的校园安全防控">
+				 <a href="javascript:void(0);" onclick="goStudy('386795')">
+					 疫情下的校园安全防控
+				 </a>
+			 </p>
+			 <p class="xk_rs clear">
+                	<span class="fl" style="margin-right: 10px;">已学习
+																					50
+																		分钟</span>
+				 			 </p>
+			 		 </div>
+		 <div class="kcxx_side_bq fl" style="height: 72px;">
+			 <ul>
+				 					 <li class="bq_xs">
+						 <i>
+							  3.0  学时						 </i>
+					 </li>
+				 				 					   <li class="bq_xx"> 选修</li>				 				 <li class="bq_zt">进行中</li> 			 </ul>
+		 </div>
+		 <div class="kcxx_side_time fr" style="height: 72px;">
+			 			 <p class="xx_sj">有<span>9</span>人选了此课</p>
+			 <p class="xx_pl">
+				 				 					 					 <a href="javascript:void(0);">评论(<span class="pl_count_$article.id">2</span>)</a>
+				 				 					 <a class="qxx" href="javascript:void(0);" onclick="goStudy('386795')">
+						 去学习
+						 					 </a>
+				 				 <input type="hidden" id="qualifiedTime386795" value="">				 				 
+			 </p>
+		 </div>
+		 <p class="xk_rs clear">
+			 		 </p>
+	 </div>
+	 	 <div class="list">
+		 <div class="kcxx_side_title fl Course_list_info">
+			 <p class="kcal_title" title="提高突发事件应对能力">
+				 <a href="javascript:void(0);" onclick="goStudy('386797')">
+					 提高突发事件应对能力
+				 </a>
+			 </p>
+			 <p class="xk_rs clear">
+                	<span class="fl" style="margin-right: 10px;">已学习
+																					50
+																		分钟</span>
+				 			 </p>
+			 		 </div>
+		 <div class="kcxx_side_bq fl" style="height: 72px;">
+			 <ul>
+				 					 <li class="bq_xs">
+						 <i>
+							  7.0  学时						 </i>
+					 </li>
+				 				 					   <li class="bq_xx"> 选修</li>				 				 <li class="bq_zt">进行中</li> 			 </ul>
+		 </div>
+		 <div class="kcxx_side_time fr" style="height: 72px;">
+			 			 <p class="xx_sj">有<span>12</span>人选了此课</p>
+			 <p class="xx_pl">
+				 				 					 					 <a href="javascript:void(0);">评论(<span class="pl_count_$article.id">3</span>)</a>
+				 				 					 <a class="qxx" href="javascript:void(0);" onclick="goStudy('386797')">
+						 去学习
+						 					 </a>
+				 				 <input type="hidden" id="qualifiedTime386797" value="">				 				 
+			 </p>
+		 </div>
+		 <p class="xk_rs clear">
+			 		 </p>
+	 </div>
+	 	 <div class="list">
+		 <div class="kcxx_side_title fl Course_list_info">
+			 <p class="kcal_title" title="典型突发事件案例分析">
+				 <a href="javascript:void(0);" onclick="goStudy('386799')">
+					 典型突发事件案例分析
+				 </a>
+			 </p>
+			 <p class="xk_rs clear">
+                	<span class="fl" style="margin-right: 10px;">已学习
+																					50
+																		分钟</span>
+				 			 </p>
+			 		 </div>
+		 <div class="kcxx_side_bq fl" style="height: 72px;">
+			 <ul>
+				 					 <li class="bq_xs">
+						 <i>
+							  8.0  学时						 </i>
+					 </li>
+				 				 					   <li class="bq_xx"> 选修</li>				 				 <li class="bq_zt">进行中</li> 			 </ul>
+		 </div>
+		 <div class="kcxx_side_time fr" style="height: 72px;">
+			 			 <p class="xx_sj">有<span>10</span>人选了此课</p>
+			 <p class="xx_pl">
+				 				 					 					 <a href="javascript:void(0);">评论(<span class="pl_count_$article.id">1</span>)</a>
+				 				 					 <a class="qxx" href="javascript:void(0);" onclick="goStudy('386799')">
+						 去学习
+						 					 </a>
+				 				 <input type="hidden" id="qualifiedTime386799" value="">				 				 
+			 </p>
+		 </div>
+		 <p class="xk_rs clear">
+			 		 </p>
+	 </div>
+	 	 <div class="list">
+		 <div class="kcxx_side_title fl Course_list_info">
+			 <p class="kcal_title" title="有效的教研活动设计">
+				 <a href="javascript:void(0);" onclick="goStudy('386819')">
+					 有效的教研活动设计
+				 </a>
+			 </p>
+			 <p class="xk_rs clear">
+                	<span class="fl" style="margin-right: 10px;">已学习
+																					50
+																		分钟</span>
+				 			 </p>
+			 		 </div>
+		 <div class="kcxx_side_bq fl" style="height: 72px;">
+			 <ul>
+				 					 <li class="bq_xs">
+						 <i>
+							  4.0  学时						 </i>
+					 </li>
+				 				 					   <li class="bq_xx"> 选修</li>				 				 <li class="bq_zt">进行中</li> 			 </ul>
+		 </div>
+		 <div class="kcxx_side_time fr" style="height: 72px;">
+			 			 <p class="xx_sj">有<span>12</span>人选了此课</p>
+			 <p class="xx_pl">
+				 				 					 					 <a href="javascript:void(0);">评论(<span class="pl_count_$article.id">0</span>)</a>
+				 				 					 <a class="qxx" href="javascript:void(0);" onclick="goStudy('386819')">
+						 去学习
+						 					 </a>
+				 				 <input type="hidden" id="qualifiedTime386819" value="">				 				 
+			 </p>
+		 </div>
+		 <p class="xk_rs clear">
+			 		 </p>
+	 </div>
+	 	 <div class="list">
+		 <div class="kcxx_side_title fl Course_list_info">
+			 <p class="kcal_title" title="做一名研究型教师">
+				 <a href="javascript:void(0);" onclick="goStudy('386825')">
+					 做一名研究型教师
+				 </a>
+			 </p>
+			 <p class="xk_rs clear">
+                	<span class="fl" style="margin-right: 10px;">已学习
+																					51
+																		分钟</span>
+				 			 </p>
+			 		 </div>
+		 <div class="kcxx_side_bq fl" style="height: 72px;">
+			 <ul>
+				 					 <li class="bq_xs">
+						 <i>
+							  6.0  学时						 </i>
+					 </li>
+				 				 					   <li class="bq_xx"> 选修</li>				 				 <li class="bq_zt">进行中</li> 			 </ul>
+		 </div>
+		 <div class="kcxx_side_time fr" style="height: 72px;">
+			 			 <p class="xx_sj">有<span>10</span>人选了此课</p>
+			 <p class="xx_pl">
+				 				 					 					 <a href="javascript:void(0);">评论(<span class="pl_count_$article.id">0</span>)</a>
+				 				 					 <a class="qxx" href="javascript:void(0);" onclick="goStudy('386825')">
+						 去学习
+						 					 </a>
+				 				 <input type="hidden" id="qualifiedTime386825" value="">				 				 
+			 </p>
+		 </div>
+		 <p class="xk_rs clear">
+			 		 </p>
+	 </div>
+	  	<div class="fanye" style="margin-top: 10px;">	<span>共 9 条记录 </span>
+					 <span class="disabled">&lt;上一页</span> 																		<span class="page_label_check current">1</span>
+								 <span class="disabled">下一页 &gt;</span> 		
+		<span>跳转到<input size="2" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" class="page_num_input fanyek">页</span><input value="跳转" class="fdeephui fanyek" type="button" onclick="var v=jQuery(this).prev('span').find('.page_num_input').val();if(!(v>0)){alert('您输入的页数不存在');return;};if((v>1)){alert('您输入的页数不存在');return;};var pnum='pageSize=15&amp;curPage='+(v);var burl='courseStudyList.htm?ptcode=34101&amp;stageId=0&amp;searchName=';burl+=(burl.indexOf('?')!=-1)?'&amp;'+ pnum:'?'+pnum;pager_for_load(burl);"> 
+	</div>
+  <div class="pop w320 pb10" id="xxtimakesure" style="border:1px solid #9a99ff;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);">
+	<div class="pop_box">
+		<div class="pop_title clear">
+			<span class="pop_tit">考核提示：</span>
+			<a href="javascript:;" class="close fr close33"></a>
+		</div>
+		<div class="pop_cont p20">
+			<div class="prompt black" style="color: #f00;">此门课程已得满分，不再参与累计学时成绩；</div>
+		</div>
+		<div class="pop_btn">
+			<a id="continueStudy" href="" target="_blank" class="close33" onclick="javascript:;">继续学习</a>
+			<a href="javascript:;" class="close33">返回列表</a>
+		</div>
+	</div>
+</div>
+<a href="javascript:;" id="xxts" style="display:none;">--</a>
+<div id="mask3"></div>
+</div>
+  </div>
+  
+</div> 
+<script type="text/javascript">
+
+$(document).ready(function(){
+    $("#tabsholder").tytabs({
+                            tabinit:"1",
+                            fadespeed:"fast"
+                            });
+    $("#tabsholder2").tytabs({
+                            prefixtabs:"tabz",
+                            prefixcontent:"contentz",
+                            classcontent:"tabscontent",
+                            tabinit:"3",
+                            catchget:"tab1",
+                            fadespeed:"normal"
+                            });
+
+
+});
+
+	function searchKeyDown(){
+      if (event.keyCode == 13){
+        event.returnValue=false;
+        event.cancel = true;
+        if($('#ser').is(':visible')){
+        	searchCourse();
+        }
+      }
+    }
+    function searchCourse(){
+   		var searchName = $("#search_course_name").val().trim();
+    	var params = 'courseStudyList.htm?ptcode=34101&stageId=0&searchName='+searchName;
+		reloadContent('button_content1',params);
+	}
+</script>
+  <script>
+    $(document).ready(function(){
+      $('.kecheng_tab a').click(function(){
+        $(this).addClass('active').siblings().removeClass('active');
+        //$('.kecheng_list_con').eq($(this).index()).show().siblings().hide();
+      })
+    })
+  </script>
+<div class="mask" id="mask2"></div>
+<div class="pop w320 pb10" id="RuleTishi" style="width: 400px;border:1px solid #9a99ff;">
+	<div class="pop_box">
+		<div class="pop_title clear" style="height: 30px;line-height: 30px;background: #9a99ff;">
+			<span class="pop_tit" style="color: #fff;">消息提示</span>
+					</div>
+		<div class="pop_cont p20" style="font-size: 16px;color: #f00;">
+			<div id="ruleMsg">---</div>
+		</div>
+		<div class="pop_btn" style="text-align: right;margin-right: 10px;">
+			<a href="javascript:;" class="close22" style="width:55px; height:22px;line-height:20px;">好的</a>
+		</div>
+	</div>
+</div>
+        </div>
+    </div>
+	<div style="clear:both;"></div>
+	</div>
+	
+    <!--底部-->
+<div class="footer">
+<p> 2022年 <script type="text/javascript">
+if('teacheredu.cn'==document.domain){
+	var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1258801290'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1258801290%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+}else if('yanxiu.jsyxsq.com'==document.domain){
+	var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261590493'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1261590493%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+}else if('xjnuteacher.com'==document.domain){
+	var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261590542'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261590542%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+}else if('nbucec.com'==document.domain){
+	var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261590567'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1261590567%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+}else if('01601.cn'==document.domain){
+	var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261590600'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261590600%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+}
+</script><span id="cnzz_stat_icon_1258801290"></span><script src=" http://s11.cnzz.com/z_stat.php?id=1258801290&amp;show=pic" type="text/javascript"></script>
+</p>
+
+</div>
+<script>
+jQuery('.clearance').eq(0).hide();
+</script>
+<style>
+    .closeKF{
+      position: fixed;
+      top: 32%;
+      width: 30px;
+   	  margin-left: 97%;
+      right: 10 ;
+      color: #000;
+      cursor: pointer;
+    }
+    .zaixiankefu2{
+      width: 45px;
+      height: 45px;
+      position: fixed;
+      right: 0;
+      top: 35%;
+      z-index: 999;
+      cursor: pointer;
+      display: none;
+    }
+    .zaixiankefu2 img{
+      width: 100%;
+      height: 100%;
+    }
+</style>
+<script>
+    $(function(){
+      $('.closeKF').click(function(){
+        $('#doyoo_panel').hide()
+        $(".closeKF").hide();
+        $('.zaixiankefu2').show()
+      })
+      $('.zaixiankefu2').click(function(){
+        $('#doyoo_panel').show()
+        $(".closeKF").show();
+        $('.zaixiankefu2').hide()
+      })
+      setTimeout(function(){
+    	$("#doyoo_panel").css('top','35%');
+		}, 300);
+    })
+</script>
+                            	<div class="closeKF">关闭 </div>
+        	<div class="zaixiankefu2">
+		    	<img src="http://static.study.teacheredu.cn/el/pc/default/v1.0/gongzuoshi_new/images/zaixiankefu.png" alt="">
+		 	</div>
+        	<div class="" id="one_close_b" style="position: fixed;top:100px;right:0;">
+								    				
+    			        	</div><link rel="stylesheet" type="text/css" href="//aux.soperson.com/20200520/looyu.f7bf1efc8b105c9c95d249e08b3cceda.css"><script type="text/javascript" src="//aux.soperson.com/20200520/looyu.904a5e474c903a973484d588fe66ffe5.js" charset="utf-8"></script>
+            
+
+<div id="div1" style="display:none;width:500px; height:220px;background:url(http://static.study.teacheredu.cn//el/pc/default/v1.0/c/images/banbenBg.jpg) no-repeat; position:fixed;bottom:0;right:0;">
+	<div style=" width:16px; height:16px; position:absolute; right:14px; top:14px; cursor:pointer;" onclick="closed();" title="关闭窗口">
+		<img src="http://static.study.teacheredu.cn//el/pc/default/v1.0/c/images/banbenClose.jpg" width="16" height="16">
+	</div>
+	<p style="line-height:20px;text-indent:2em; padding:36px 50px 10px 140px;">您正在使用低版本的浏览器，为了操作更顺畅，显示效果更理想，建议您使用高版本的IE浏览器或其他标准浏览器登录本站，体验效果可能会更佳。<br><br>
+            下载地址：
+    </p>
+    <span style=" width:216px;display:block; padding:10px 0 0 0; margin:0 auto;">
+    	<img src="http://static.study.teacheredu.cn//el/pc/default/v1.0/c/images/banbenBg_liulanqi2.jpg" width="216" height="44" border="0" usemap="#Map">
+    </span>
+</div>
+  <map name="Map" id="Map">
+   <area shape="rect" coords="1,-1,47,45" href="http://windows.microsoft.com/zh-cn/internet-explorer/ie-8-worldwide-languages/" target="_blank" title="IE浏览器中文网站">
+   <area shape="rect" coords="60,0,105,44" href="http://se.360.cn/" target="_blank" title="360浏览器官方网站">
+   <area shape="rect" coords="117,1,162,45" href="http://www.google.cn/intl/zh-CN/chrome/browser/desktop/index.html" target="_blank" title="谷歌浏览器官方网站">
+   <area shape="rect" coords="173,0,215,48" href="http://www.firefox.com.cn/" target="_blank" title="火狐浏览器官方网站">
+ </map>
+ <script>
+ 	function closed(){
+		jQuery("#div1").slideUp();
+	}
+	var cookies = document.cookie.split(";");
+	var j = 0;
+	for(var i = 0; i < cookies.length; i++){
+		var temp = cookies[i].split("=");
+		if(temp[0] == "BROWSER_TIPS"){
+			j++;
+		}
+	}
+	
+	function checkBrowser(){ //判断是否是360浏览器（安全和极速）
+		var userAgent = window.navigator.userAgent;
+		var msie = jQuery.browser.msie;
+        var is360 = false;  
+		if (userAgent.indexOf('WOW') != -1 && userAgent.indexOf("NET") < 0 && userAgent.indexOf("Firefox") < 0) {
+			 is360 = true; 
+		}		
+//      if((window.navigator.userProfile+'')=='null'){  
+//          is360 = true;  
+//      } 
+      return  is360; 
+    }
+	
+	function chectIsIE(){
+		//console.log('进入ie判断'); 
+		var userAgenta = window.navigator.userAgent;
+    	var isOpera = userAgenta.indexOf("Opera") > -1; //判断是否Opera浏览器 	
+ 		var isIE = userAgenta.indexOf("compatible") > -1 && userAgenta.indexOf("MSIE") > -1 && !isOpera; //判断是否IE浏览器
+		return isIE;
+	}
+	
+	//浏览器第一次访问j=0，随后访问j就不会为0了，防止重复弹窗，cook清除j才会=0（想要看效果清除浏览器cookie）
+	if(j == 0){
+		//chectIsIE();
+		if(checkBrowser() && jQuery.browser.version < 7){
+			jQuery("#div1").show();
+			var str="BROWSER_TIPS="+escape("browser_tips");
+        	var d = new Date();
+        	d.setDate(d.getDate() + 1);
+        	var y = d.getYear() + 1900;
+        	var m = d.getMonth();
+        	var d = d.getDate();
+        	var date = new Date(y,m,d,00,00,00);
+        	date.setTime(date.getTime());
+        	str+=";expires=" + date.toGMTString();
+        	document.cookie = str;
+		}else if (jQuery.browser.msie && jQuery.browser.version < 8 && !checkBrowser()) {
+    		jQuery("#div1").show();
+			var str="BROWSER_TIPS="+escape("browser_tips");
+        	var d = new Date();
+        	d.setDate(d.getDate() + 1);
+        	var y = d.getYear() + 1900;
+        	var m = d.getMonth();
+        	var d = d.getDate();
+        	var date = new Date(y,m,d,00,00,00);
+        	date.setTime(date.getTime());
+        	str+=";expires=" + date.toGMTString();
+        	document.cookie = str;
+    	}else if (chectIsIE()) {
+			var userAgent = navigator.userAgent;
+	 		var reIE = new RegExp("MSIE (\\d+\\.\\d+);"); 
+	      	reIE.test(userAgent); 
+	      	var fIEVersion = parseFloat(RegExp["$1"]); 
+			//alert('ie版本===='+fIEVersion)
+	     	if(fIEVersion == 5 ||fIEVersion == 6 || fIEVersion == 7 || fIEVersion == 8) { //ie版本低于8的弹出升级提示
+				jQuery("#div1").show();
+				var str="BROWSER_TIPS="+escape("browser_tips");
+	        	var d = new Date();
+	        	d.setDate(d.getDate() + 1);
+	        	var y = d.getYear() + 1900;
+	        	var m = d.getMonth();
+	        	var d = d.getDate();
+	        	var date = new Date(y,m,d,00,00,00);
+	        	date.setTime(date.getTime());
+	        	str+=";expires=" + date.toGMTString();
+	        	document.cookie = str;			
+			 
+			 } 	
+		
+		
+		} 
+		
+	}	
+	
+
+	
+
+
+	
+	
+	
+	
+	
+	
+</script>	
+
+
+<div id="doyoo_panel" class="doyoo_pan_icon" style="position: fixed; top: 35%; right: 5px; width: 89px; height: 139px;"><div class="doyoo_pan_icon_inner" id="looyu_dom_0" style="width: 89px; float: right; background-image: url(&quot;5f559505a310f0be6ec05be0.gif&quot;);"><a href="javascript:;" id="looyu_dom_1" style="display:block;width:100%;height:100%;">&nbsp;</a></div></div><div id="doyoo_monitor"></div><div id="doyoo_share"></div></body><style id="stylus-1" type="text/css" class="stylus">.yellow {
+    font-size:168px
+}
+ .video_title_time a {
+        display: none;
+    }
+.introduce_list {
+    font-size: 40px;
+}
+.introduce_list span {
+    display: none;
+}
+.video_title_time a {
+    display: block;
+    float: right;
+}</style></html>

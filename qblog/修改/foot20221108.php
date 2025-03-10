@@ -1,0 +1,4 @@
+<?php if(!defined('WMBLOG'))exit; ?><div id="footer"><p><i class="far fa-copyright"></i> 2005年1月3日–<?php echo date('Y'); ?>&nbsp;&nbsp;|&nbsp;&nbsp;博主稳定运行<span id="Clock" style="color: red;"></span>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://beian.miit.gov.cn/" rel="nofollow" target="_blank"><?php echo $set['icp'];?></a>&nbsp;&nbsp;|&nbsp;&nbsp;Processed <?php $t2 = microtime(true); echo round($t2-$t1,3); ?>s</div>
+<script type="text/javascript" language="javascript" src="assets/js/layer.js"></script>
+<script type="text/javascript" language="javascript" src="assets/js/ajax.js?v=4.1"></script>
+<?php if(ADMIN) echo '<script type="text/javascript" language="javascript" src="assets/js/admin.js?v=4.0"></script>';?>
