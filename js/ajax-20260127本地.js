@@ -62,11 +62,11 @@ function addpl(id,f){
 	 var pldata = $("#formpl").serialize();
 	 //console.log(pldata);
 	 StopButton('add',9);
-	 $.post("https://linji.cn/app/class/ajax.php?act=addpl&id="+id, pldata , function(data) {	 
+	 $.post("../app/class/ajax.php?act=addpl&id="+id, pldata , function(data) {	 
      if(data.result == '200')
 	 {	
 		 pldata += "&r="+encodeURIComponent(window.location.href);
-		 $.post("https://linji.cn/app/class/ajax.php?act=pltz&d=addpl&id="+id,pldata);
+		 $.post("../app/class/ajax.php?act=pltz&d=addpl&id="+id,pldata);
 		 $(".comment_list").append(data.message);$("#pcontent").val('');$("#pcode").val('');reloadcode();
 		 errmsg('');	 	 
 	 }else{
