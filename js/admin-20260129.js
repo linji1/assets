@@ -2,7 +2,7 @@ var upic = '',pics='',pic_arr='',editor='';
 var apic = 0;
 function saveset(){
     var data = $("#formset")._serialize();
-    $.post("../app/class/ajax.php?act=saveset",data , function(data) {
+    $.post("./app/class/ajax.php?act=saveset",data , function(data) {
 		errmsg(data.message)
 	}, 'json');
 
@@ -15,7 +15,7 @@ function savewid(id){
 	   errmsg("标题不能为空！","#formwid"+id+" ");
 	   return false
    }; 
-   $.post("../app/class/ajax.php?act=savewid&id="+id,data , function(data) {
+   $.post("./app/class/ajax.php?act=savewid&id="+id,data , function(data) {
 		errmsg(data.message,"#formwid"+id+" ")
 	}, 'json');
  
@@ -25,7 +25,7 @@ function delwid(id){
     content: '您确定要删除吗？'
     ,btn: ['确定', '取消']
     ,yes: function(index){
-		$.get("../app/class/ajax.php?act=delwid&id="+id,function(data){if(data.result=='200'){ window.location.reload();}else{myalert(data.message);}},'json');
+		$.get("./app/class/ajax.php?act=delwid&id="+id,function(data){if(data.result=='200'){ window.location.reload();}else{myalert(data.message);}},'json');
       }
   });  
 }
@@ -43,7 +43,7 @@ function fplug(){
     content: '您确定要删除吗？'
     ,btn: ['确定', '取消']
     ,yes: function(index){
-		$.get("../app/class/ajax.php?act=dplug&id="+id,function(data){if(data.result=='200'){ layer.close(index);$('#plug'+id).remove();}else{myalert(data.message);}},'json');
+		$.get("./app/class/ajax.php?act=dplug&id="+id,function(data){if(data.result=='200'){ layer.close(index);$('#plug'+id).remove();}else{myalert(data.message);}},'json');
       }
   });  
 }
@@ -52,7 +52,7 @@ function kgplug(id){
    // console.log(that)
    var kgtxt = $('#kg'+id).text();
    var d = kgtxt=='开启'?1:0;
-   $.get("../app/class/ajax.php?act=kgplug&id="+id+"&d="+d, function(data) {
+   $.get("./app/class/ajax.php?act=kgplug&id="+id+"&d="+d, function(data) {
 	    //layer.closeAll();
 		$('#kg'+id).text(data.message);
 		mymsg(data.message+'成功');
@@ -61,7 +61,7 @@ function kgplug(id){
 }
 function aplug(){
    var f = $("#fplug").val();
-   $.get("../app/class/ajax.php?act=aplug&d="+f, function(data) {
+   $.get("./app/class/ajax.php?act=aplug&d="+f, function(data) {
 	   if(data.result=='200'){ 
 	      window.location.reload();
 	   }else{
@@ -71,13 +71,13 @@ function aplug(){
 }
 function splug(id){
    var arg = $("#eplug"+id).serialize();
-   $.post("../app/class/ajax.php?act=splug&id="+id, arg , function(data) {
+   $.post("./app/class/ajax.php?act=splug&id="+id, arg , function(data) {
 	    layer.closeAll();
 		mymsg(data.message);
 	}, 'json'); 
 }
 function eplug(id){
-	   $.get("../app/class/ajax.php?act=eplug&id="+id,function(data){		   
+	   $.get("./app/class/ajax.php?act=eplug&id="+id,function(data){		   
     layer.open({
     type: 1
     ,content: data.message
@@ -89,7 +89,7 @@ function eplug(id){
 }
 
  function upCache(){
-   $.get("../app/class/ajax.php?act=upcache",function(data){mymsg(data.message);},'json');
+   $.get("./app/class/ajax.php?act=upcache",function(data){mymsg(data.message);},'json');
 }
 
 function savelog() {
@@ -112,7 +112,7 @@ function savelog() {
     content: '保存中...'
   });
   //$("#addpost").attr("disabled",true);
-  $.post("../app/class/ajax.php?act=savelog", $.param(data), function(data) {
+  $.post("./app/class/ajax.php?act=savelog", $.param(data), function(data) {
 				 
 		if (data.result == '200') {		
 		  window.location.href = 'index.php?act=pl&id='+data.id;
@@ -129,7 +129,7 @@ function dellog(id,v){
     content: '您确定要删除吗？'
     ,btn: ['确定', '取消']
     ,yes: function(index){
-      $.get("../app/class/ajax.php?act=dellog&id="+id,function(data){if(data.result=='200'){ layer.close(index);if(v=='1'){location.href="./";}else{$("#log-"+id).fadeOut();} }else{myalert(data.message);}},'json');
+      $.get("./app/class/ajax.php?act=dellog&id="+id,function(data){if(data.result=='200'){ layer.close(index);if(v=='1'){location.href="./";}else{$("#log-"+id).fadeOut();} }else{myalert(data.message);}},'json');
       }
   });     
 }
@@ -138,18 +138,18 @@ function delpl(id,pid){
     content: '您确定要删除吗？'
     ,btn: ['确定', '取消']
     ,yes: function(index){
-	 $.get("../app/class/ajax.php?act=delpl&id="+id+"&cid="+pid,function(data){if(data.result=='200'){layer.close(index);$("#Com-"+id).fadeOut();}else{myalert(data.message);}},'json');
+	 $.get("./app/class/ajax.php?act=delpl&id="+id+"&cid="+pid,function(data){if(data.result=='200'){layer.close(index);$("#Com-"+id).fadeOut();}else{myalert(data.message);}},'json');
     }
   }); 	 
 }
 function shpl(id){
-		$.get("../app/class/ajax.php?act=shpl&id="+id,function(data){if(data.result=='200'){$("#sh-"+id).fadeOut();}else{myalert(data.message);}},'json');
+		$.get("./app/class/ajax.php?act=shpl&id="+id,function(data){if(data.result=='200'){$("#sh-"+id).fadeOut();}else{myalert(data.message);}},'json');
 }
 function zdlog(id){
 	var zdobj=$("#zd-"+id);
 	var xval=0;
 	if(zdobj.text()=='置顶'){xval=1};
-	$.get("../app/class/ajax.php?act=zdlog&id="+id+"&d="+xval,function(data){if(data.result=='200'){zdobj.text(data.message);}else{myalert(data.message);}},'json');
+	$.get("./app/class/ajax.php?act=zdlog&id="+id+"&d="+xval,function(data){if(data.result=='200'){zdobj.text(data.message);}else{myalert(data.message);}},'json');
 }
 
 function showImg(input) {
@@ -258,7 +258,7 @@ $(document).ready(function() {
             if (obj.error == 0) {
                 pic_arr.push(obj.url);
                 if (upic == '' && apic == 0) {
-                    $.get("../app/class/ajax.php?act=thum&d=" + obj.url,
+                    $.get("./app/class/ajax.php?act=thum&d=" + obj.url,
                     function(data) {
                         if (data.result == '200') {
                             upic = data.message;
