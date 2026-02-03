@@ -7,7 +7,7 @@
   let sentences = [];
   const rate = 1;
 
-  // ===== 判断是否为 PC 端 =====
+  // ===== 判断是否为 PC 端（非移动设备）=====
   const isPC = !/Mobile|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
   // 用户手势标记（仅用于移动端选读）
@@ -18,16 +18,8 @@
     document.body.addEventListener('touchstart', recordGesture, { once: true });
   }
 
-  // ✅【核心】安全分割句子：支持任意 HTML 结构，保留所有标签
+  // ✅【关键修复】安全包裹句子，保留 <a> 等所有 HTML 标签
   function createSentenceElements(element) {
-    // 清理已有的 .sentence 包裹（防止重复处理）
-    const existing = element.querySelectorAll('.sentence');
-    existing.forEach(span => {
-      const parent = span.parentNode;
-      const textNode = document.createTextNode(span.textContent);
-      parent.replaceChild(textNode, span);
-    });
-
     const walker = document.createTreeWalker(
       element,
       NodeFilter.SHOW_TEXT,
@@ -38,12 +30,13 @@
     const textNodes = [];
     let node;
     while (node = walker.nextNode()) {
-      if (node.textContent.trim()) {
+      // 跳过已包裹的文本（避免重复处理）
+      if (node.textContent.trim() && !node.parentElement.closest('.sentence')) {
         textNodes.push(node);
       }
     }
 
-    // 从后往前处理，避免 DOM 变动影响遍历
+    // 从后往前处理，防止 DOM 变动影响遍历
     for (let i = textNodes.length - 1; i >= 0; i--) {
       const textNode = textNodes[i];
       const text = textNode.nodeValue;
@@ -51,6 +44,7 @@
 
       // 按中文句号、问号、感叹号分割（保留标点）
       const parts = text.split(/(?<=[。！？!?])/g).filter(p => p.trim().length > 0);
+
       if (parts.length === 0) continue;
 
       const fragment = document.createDocumentFragment();
@@ -65,15 +59,12 @@
     }
   }
 
-  // ===== 初始化 =====
   function initReading() {
     const printview = document.getElementById('printview');
     if (!printview) return;
 
-    // 处理整个容器，不限标签类型
-    createSentenceElements(printview);
-
-    // 获取所有句子
+    const textElements = printview.querySelectorAll('h1, p');
+    textElements.forEach(el => createSentenceElements(el));
     sentences = Array.from(document.querySelectorAll('#printview .sentence'));
 
     waitForVoices().then(() => {
@@ -83,7 +74,6 @@
     });
   }
 
-  // ===== 等待语音加载 =====
   function waitForVoices() {
     return new Promise((resolve) => {
       const loadVoices = () => {
@@ -100,7 +90,6 @@
     });
   }
 
-  // ===== 初始化语音选择框 =====
   function initVoiceSelect() {
     const voiceSelect = document.getElementById('voiceSelect');
     if (!voiceSelect) return;
@@ -115,14 +104,12 @@
     voiceSelect.value = preferred !== -1 ? preferred : (voices.length > 0 ? 0 : '');
   }
 
-  // ===== 绑定事件 =====
   function setupEventListeners() {
-    // 重新获取最新句子列表
+    // 重新获取句子（因为 DOM 已更新）
     sentences = Array.from(document.querySelectorAll('#printview .sentence'));
-
     sentences.forEach((s, i) =>
       s.addEventListener('click', (e) => {
-        // 如果点击的是链接，不拦截
+        // 阻止冒泡到链接等元素（但允许链接自身行为）
         if (!e.target.closest('a')) {
           handleClickSentence(i);
         }
@@ -135,7 +122,6 @@
     }
   }
 
-  // ===== 选中文本朗读 =====
   function bindSelectReadEvent() {
     const handler = () => {
       const selection = window.getSelection?.();
@@ -146,6 +132,7 @@
 
       if (isPC) {
         readSelectedText(selectedText);
+        // 清除选中（可选）
         selection.removeAllRanges();
       } else {
         if (hasUserGesture) {
@@ -160,13 +147,16 @@
     const printview = document.getElementById('printview');
     if (printview) {
       printview.addEventListener('mouseup', handler);
-      if (!isPC) printview.addEventListener('touchend', handler);
+      if (!isPC) {
+        printview.addEventListener('touchend', handler);
+      }
     }
     document.addEventListener('mouseup', handler);
-    if (!isPC) document.addEventListener('touchend', handler);
+    if (!isPC) {
+      document.addEventListener('touchend', handler);
+    }
   }
 
-  // ===== 朗读选中文本 =====
   function readSelectedText(text) {
     speechSynthesis.cancel();
     isPlaying = false;
@@ -175,18 +165,17 @@
     updateProgress();
 
     const voiceSelect = document.getElementById('voiceSelect');
-    const idx = voiceSelect ? parseInt(voiceSelect.value) : 0;
+    const selectedVoiceIndex = voiceSelect ? parseInt(voiceSelect.value) : 0;
 
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = 'zh-CN';
-    if (voices[idx]) utterance.voice = voices[idx];
+    if (voices[selectedVoiceIndex]) utterance.voice = voices[selectedVoiceIndex];
     utterance.rate = rate;
 
     currentUtterance = utterance;
     speechSynthesis.speak(utterance);
   }
 
-  // ===== 全文播放 =====
   function handlePlayAction(action) {
     if (action === 'play') {
       speechSynthesis.cancel();
@@ -198,7 +187,6 @@
     updateButtonStates();
   }
 
-  // ===== 点击单句 =====
   function handleClickSentence(index) {
     speechSynthesis.cancel();
     currentSentenceIndex = index;
@@ -208,7 +196,6 @@
     updateButtonStates();
   }
 
-  // ===== 朗读指定句子 =====
   function speakSentence(index) {
     if (index >= sentences.length || index < 0) {
       isPlaying = false;
@@ -223,21 +210,21 @@
     updateHighlight(index);
 
     const voiceSelect = document.getElementById('voiceSelect');
-    const idx = voiceSelect ? parseInt(voiceSelect.value) : 0;
+    const selectedVoiceIndex = voiceSelect ? parseInt(voiceSelect.value) : 0;
 
     const utterance = new SpeechSynthesisUtterance(sentences[index].textContent);
-    if (voices[idx]) utterance.voice = voices[idx];
+    if (voices[selectedVoiceIndex]) utterance.voice = voices[selectedVoiceIndex];
     utterance.rate = rate;
     utterance.lang = 'zh-CN';
 
-    utterance.onstart = () => {
+    utterance.onstart = function () {
       sentences[index].classList.add('current');
       updateButtonStates();
       updateProgress();
       sentences[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
     };
 
-    utterance.onend = () => {
+    utterance.onend = function () {
       sentences[index].classList.remove('current');
       currentSentenceIndex++;
       speakSentence(currentSentenceIndex);
@@ -247,7 +234,6 @@
     speechSynthesis.speak(utterance);
   }
 
-  // ===== 工具函数 =====
   function removeReadingStyles() {
     sentences.forEach(s => s.classList.remove('current'));
   }
@@ -268,10 +254,7 @@
     const total = sentences.length;
     const current = Math.min(currentSentenceIndex + 1, total);
     if (progressText) progressText.textContent = `${current}/${total}`;
-    if (progressFill && total > 0) {
-      progressFill.style.width = `${(current / total) * 100}%`;
-    }
+    if (progressFill) progressFill.style.width = total > 0 ? `${(current / total) * 100}%` : '0%';
   }
 
-  // ===== 启动 =====
   document.addEventListener('DOMContentLoaded', initReading);
