@@ -1,5 +1,4 @@
-// 听读功能核心JS（放在 </body> 前）
-(function () {
+  // ===== </body>前插入听读核心JS=====
   const speechSynthesis = window.speechSynthesis;
   let voices = [];
   let currentUtterance = null;
@@ -8,66 +7,44 @@
   let sentences = [];
   const rate = 1;
 
-  // 判断是否为 PC 端
+  // ===== 判断是否为 PC 端（非移动设备）=====
   const isPC = !/Mobile|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-  // 移动端用户手势标记
+  // 用户手势标记（仅用于移动端选读）
   let hasUserGesture = false;
-  const recordGesture = () => { 
-    hasUserGesture = true; 
-    enableControls(); // 手势后启用控件
-  };
+  const recordGesture = () => { hasUserGesture = true; };
   if (!isPC) {
     document.body.addEventListener('click', recordGesture, { once: true });
     document.body.addEventListener('touchstart', recordGesture, { once: true });
-  } else {
-    hasUserGesture = true; // PC 默认允许
   }
 
-  // 启用播放等控件
-  function enableControls() {
-    const playBtn = document.getElementById('playBtn');
-    if (playBtn) playBtn.disabled = false;
-  }
-
-  // 禁用控件（如语音未加载完）
-  function disableControls() {
-    const playBtn = document.getElementById('playBtn');
-    if (playBtn) playBtn.disabled = true;
-  }
-
-  // 安全包裹句子：仅处理文本节点，跳过 script/style/noscript，保留 img/a 等结构
+  // ✅【关键修复】安全包裹句子，保留 <a> 等所有 HTML 标签
   function createSentenceElements(element) {
     const walker = document.createTreeWalker(
       element,
       NodeFilter.SHOW_TEXT,
-      {
-        acceptNode: function (node) {
-          const parent = node.parentElement;
-          if (parent && ['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEXTAREA', 'CODE'].includes(parent.tagName)) {
-            return NodeFilter.FILTER_REJECT;
-          }
-          if (parent && parent.closest && parent.closest('.sentence')) {
-            return NodeFilter.FILTER_REJECT;
-          }
-          return node.textContent.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
-        }
-      },
+      null,
       false
     );
 
     const textNodes = [];
     let node;
-    while ((node = walker.nextNode())) {
-      textNodes.push(node);
+    while (node = walker.nextNode()) {
+      // 跳过已包裹的文本（避免重复处理）
+      if (node.textContent.trim() && !node.parentElement.closest('.sentence')) {
+        textNodes.push(node);
+      }
     }
 
+    // 从后往前处理，防止 DOM 变动影响遍历
     for (let i = textNodes.length - 1; i >= 0; i--) {
       const textNode = textNodes[i];
       const text = textNode.nodeValue;
       const parent = textNode.parentNode;
 
-      const parts = text.split(/(?<=[。！？!?])/).filter(p => p.trim());
+      // 按中文句号、问号、感叹号分割（保留标点）
+      const parts = text.split(/(?<=[。！？!?])/g).filter(p => p.trim().length > 0);
+
       if (parts.length === 0) continue;
 
       const fragment = document.createDocumentFragment();
@@ -84,22 +61,16 @@
 
   function initReading() {
     const printview = document.getElementById('printview');
-    if (!printview) {
-      console.warn('#printview not found');
-      return;
-    }
+    if (!printview) return;
 
-    createSentenceElements(printview);
-    sentences = Array.from(printview.querySelectorAll('.sentence'));
-
-    // 初始化时禁用播放按钮，等语音加载完成再启用
-    disableControls();
+    const textElements = printview.querySelectorAll('h1, p');
+    textElements.forEach(el => createSentenceElements(el));
+    sentences = Array.from(document.querySelectorAll('#printview .sentence'));
 
     waitForVoices().then(() => {
       setupEventListeners();
       bindSelectReadEvent();
       updateProgress();
-      enableControls(); // 语音加载完成，启用控件
     });
   }
 
@@ -134,21 +105,21 @@
   }
 
   function setupEventListeners() {
+    // 重新获取句子（因为 DOM 已更新）
     sentences = Array.from(document.querySelectorAll('#printview .sentence'));
     sentences.forEach((s, i) =>
       s.addEventListener('click', (e) => {
+        // 阻止冒泡到链接等元素（但允许链接自身行为）
         if (!e.target.closest('a')) {
           handleClickSentence(i);
         }
       })
     );
 
-    // 使用事件委托，避免元素不存在的问题
-    document.addEventListener('click', (e) => {
-      if (e.target.id === 'playBtn') {
-        handlePlayAction();
-      }
-    });
+    const playBtn = document.getElementById('playBtn');
+    if (playBtn) {
+      playBtn.addEventListener('click', () => handlePlayAction('play'));
+    }
   }
 
   function bindSelectReadEvent() {
@@ -159,21 +130,34 @@
       const selectedText = selection.toString().trim();
       if (!selectedText) return;
 
-      if (isPC || hasUserGesture) {
+      if (isPC) {
         readSelectedText(selectedText);
+        // 清除选中（可选）
         selection.removeAllRanges();
       } else {
-        alert('请先点击页面任意位置，再使用选中朗读功能。');
+        if (hasUserGesture) {
+          readSelectedText(selectedText);
+          selection.removeAllRanges();
+        } else {
+          alert('请先点击页面任意位置，再使用选中朗读功能。');
+        }
       }
     };
 
+    const printview = document.getElementById('printview');
+    if (printview) {
+      printview.addEventListener('mouseup', handler);
+      if (!isPC) {
+        printview.addEventListener('touchend', handler);
+      }
+    }
     document.addEventListener('mouseup', handler);
-    if (!isPC) document.addEventListener('touchend', handler);
+    if (!isPC) {
+      document.addEventListener('touchend', handler);
+    }
   }
 
   function readSelectedText(text) {
-    if (!hasUserGesture && !isPC) return;
-
     speechSynthesis.cancel();
     isPlaying = false;
     removeReadingStyles();
@@ -181,9 +165,7 @@
     updateProgress();
 
     const voiceSelect = document.getElementById('voiceSelect');
-    const selectedVoiceIndex = voiceSelect && !isNaN(voiceSelect.value)
-      ? parseInt(voiceSelect.value, 10)
-      : 0;
+    const selectedVoiceIndex = voiceSelect ? parseInt(voiceSelect.value) : 0;
 
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = 'zh-CN';
@@ -194,51 +176,30 @@
     speechSynthesis.speak(utterance);
   }
 
-  function handlePlayAction() {
-    // 关键修复：检查用户手势（移动端）
-    if (!isPC && !hasUserGesture) {
-      alert('请先点击页面任意位置，再使用朗读功能。');
-      return;
+  function handlePlayAction(action) {
+    if (action === 'play') {
+      speechSynthesis.cancel();
+      removeReadingStyles();
+      currentSentenceIndex = 0;
+      isPlaying = true;
+      speakSentence(currentSentenceIndex);
     }
-
-    if (sentences.length === 0) {
-      console.warn('无可朗读内容');
-      return;
-    }
-
-    speechSynthesis.cancel();
-    removeReadingStyles();
-    currentSentenceIndex = 0;
-    isPlaying = true;
-    speakFromCurrentIndex();
     updateButtonStates();
   }
 
   function handleClickSentence(index) {
-    if (!isPC && !hasUserGesture) {
-      alert('请先点击页面任意位置，再使用朗读功能。');
-      return;
-    }
-
-    if (sentences.length === 0) return;
-
     speechSynthesis.cancel();
     currentSentenceIndex = index;
     isPlaying = true;
     removeReadingStyles();
-    speakFromCurrentIndex();
+    speakSentence(currentSentenceIndex);
     updateButtonStates();
   }
 
-  function speakFromCurrentIndex() {
-    if (currentSentenceIndex < sentences.length) {
-      speakSentence(currentSentenceIndex);
-    }
-  }
-
   function speakSentence(index) {
-    if (index >= sentences.length) {
+    if (index >= sentences.length || index < 0) {
       isPlaying = false;
+      removeReadingStyles();
       updateButtonStates();
       updateProgress();
       return;
@@ -249,38 +210,24 @@
     updateHighlight(index);
 
     const voiceSelect = document.getElementById('voiceSelect');
-    const selectedVoiceIndex = voiceSelect && !isNaN(voiceSelect.value)
-      ? parseInt(voiceSelect.value, 10)
-      : 0;
+    const selectedVoiceIndex = voiceSelect ? parseInt(voiceSelect.value) : 0;
 
-    const utterance = new SpeechSynthesisUtterance(sentences[index].textContent.trim());
+    const utterance = new SpeechSynthesisUtterance(sentences[index].textContent);
     if (voices[selectedVoiceIndex]) utterance.voice = voices[selectedVoiceIndex];
     utterance.rate = rate;
     utterance.lang = 'zh-CN';
 
-    utterance.onstart = () => {
+    utterance.onstart = function () {
       sentences[index].classList.add('current');
       updateButtonStates();
       updateProgress();
       sentences[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
     };
 
-    utterance.onend = () => {
+    utterance.onend = function () {
       sentences[index].classList.remove('current');
       currentSentenceIndex++;
-      if (currentSentenceIndex < sentences.length) {
-        speakSentence(currentSentenceIndex);
-      } else {
-        isPlaying = false;
-        updateButtonStates();
-        updateProgress();
-      }
-    };
-
-    utterance.onerror = (e) => {
-      console.error('朗读出错:', e);
-      isPlaying = false;
-      updateButtonStates();
+      speakSentence(currentSentenceIndex);
     };
 
     currentUtterance = utterance;
@@ -298,7 +245,7 @@
 
   function updateButtonStates() {
     const playBtn = document.getElementById('playBtn');
-    if (playBtn) playBtn.disabled = isPlaying;
+    if (playBtn) playBtn.disabled = isPlaying && speechSynthesis.speaking;
   }
 
   function updateProgress() {
@@ -306,14 +253,8 @@
     const progressFill = document.getElementById('progressFill');
     const total = sentences.length;
     const current = Math.min(currentSentenceIndex + 1, total);
-    if (progressText) progressText.textContent = total > 0 ? `${current}/${total}` : `0/0`;
+    if (progressText) progressText.textContent = `${current}/${total}`;
     if (progressFill) progressFill.style.width = total > 0 ? `${(current / total) * 100}%` : '0%';
   }
 
-  // 启动
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initReading);
-  } else {
-    initReading();
-  }
-})();
+  document.addEventListener('DOMContentLoaded', initReading);
