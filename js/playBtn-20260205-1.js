@@ -8,6 +8,9 @@
   let sentences = [];
   const rate = 1;
 
+  // 新增：用于保存选中的 Range
+  let savedSelectionRange = null;
+
   // 判断是否为 PC 端
   const isPC = !/Mobile|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
@@ -159,7 +162,7 @@
 
       if (isPC || hasUserGesture) {
         readSelectedText(selectedText);
-        // ✅ 不在这里清除选区 —— 由朗读结束时统一清除
+        // ⚠️ 不再这里清除选区！由朗读结束时恢复
       } else {
         alert('请先点击页面任意位置，再使用选中朗读功能。');
       }
@@ -169,22 +172,34 @@
     if (!isPC) document.addEventListener('touchend', handler);
   }
 
-  // ✅ 新增：清除文本选中高亮
-  function clearTextSelection() {
-    const selection = window.getSelection();
-    if (selection && selection.removeAllRanges) {
-      selection.removeAllRanges();
+  // 新增：恢复之前保存的选区
+  function restoreSavedSelection() {
+    if (savedSelectionRange) {
+      const selection = window.getSelection();
+      try {
+        selection.removeAllRanges();
+        selection.addRange(savedSelectionRange);
+      } catch (e) {
+        console.warn('无法恢复选区，可能 DOM 已变更:', e);
+      }
+      savedSelectionRange = null;
     }
   }
 
   function readSelectedText(text) {
     if (!hasUserGesture && !isPC) return;
 
-    // ❌ 不提前清除选区 —— 保持高亮直到朗读结束
+    // 保存当前选区
+    const selection = window.getSelection();
+    if (selection.rangeCount > 0) {
+      savedSelectionRange = selection.getRangeAt(0).cloneRange();
+    } else {
+      savedSelectionRange = null;
+    }
 
     speechSynthesis.cancel();
     isPlaying = false;
-    removeReadingStyles(); // 仅清除 .current 高亮，不影响用户选中
+    removeReadingStyles();
     updateButtonStates();
     updateProgress();
 
@@ -198,15 +213,13 @@
     if (voices[selectedVoiceIndex]) utterance.voice = voices[selectedVoiceIndex];
     utterance.rate = rate;
 
-    // ✅ 朗读结束时清除用户选中的高亮
+    // 朗读结束或出错时恢复选区
     utterance.onend = () => {
-      clearTextSelection();
+      restoreSavedSelection();
     };
-
-    // ✅ 出错时也清除
     utterance.onerror = (e) => {
       console.error('朗读出错:', e);
-      clearTextSelection();
+      restoreSavedSelection();
     };
 
     currentUtterance = utterance;

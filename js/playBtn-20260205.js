@@ -92,13 +92,14 @@
     createSentenceElements(printview);
     sentences = Array.from(printview.querySelectorAll('.sentence'));
 
+    // 初始化时禁用播放按钮，等语音加载完成再启用
     disableControls();
 
     waitForVoices().then(() => {
       setupEventListeners();
       bindSelectReadEvent();
       updateProgress();
-      enableControls();
+      enableControls(); // 语音加载完成，启用控件
     });
   }
 
@@ -142,6 +143,7 @@
       })
     );
 
+    // 使用事件委托，避免元素不存在的问题
     document.addEventListener('click', (e) => {
       if (e.target.id === 'playBtn') {
         handlePlayAction();
@@ -159,7 +161,7 @@
 
       if (isPC || hasUserGesture) {
         readSelectedText(selectedText);
-        // ✅ 不在这里清除选区 —— 由朗读结束时统一清除
+        selection.removeAllRanges();
       } else {
         alert('请先点击页面任意位置，再使用选中朗读功能。');
       }
@@ -169,22 +171,12 @@
     if (!isPC) document.addEventListener('touchend', handler);
   }
 
-  // ✅ 新增：清除文本选中高亮
-  function clearTextSelection() {
-    const selection = window.getSelection();
-    if (selection && selection.removeAllRanges) {
-      selection.removeAllRanges();
-    }
-  }
-
   function readSelectedText(text) {
     if (!hasUserGesture && !isPC) return;
 
-    // ❌ 不提前清除选区 —— 保持高亮直到朗读结束
-
     speechSynthesis.cancel();
     isPlaying = false;
-    removeReadingStyles(); // 仅清除 .current 高亮，不影响用户选中
+    removeReadingStyles();
     updateButtonStates();
     updateProgress();
 
@@ -198,22 +190,12 @@
     if (voices[selectedVoiceIndex]) utterance.voice = voices[selectedVoiceIndex];
     utterance.rate = rate;
 
-    // ✅ 朗读结束时清除用户选中的高亮
-    utterance.onend = () => {
-      clearTextSelection();
-    };
-
-    // ✅ 出错时也清除
-    utterance.onerror = (e) => {
-      console.error('朗读出错:', e);
-      clearTextSelection();
-    };
-
     currentUtterance = utterance;
     speechSynthesis.speak(utterance);
   }
 
   function handlePlayAction() {
+    // 关键修复：检查用户手势（移动端）
     if (!isPC && !hasUserGesture) {
       alert('请先点击页面任意位置，再使用朗读功能。');
       return;
